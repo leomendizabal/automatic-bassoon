@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1446667744 source:c:\users\developer\documents\automatic-bassoon\obligatorio\main.cpp
+	<iostream>
+
+1512439050 source:c:\users\developer\documents\automatic-bassoon\obligatorio\src\autor.cpp
+	"autor.h"
+
+1512439050 c:\users\developer\documents\automatic-bassoon\obligatorio\include\autor.h
+
+1512439313 source:c:\users\developer\documents\automatic-bassoon\obligatorio\src\escolar.cpp
+	"escolar.h"
+
+1512439313 c:\users\developer\documents\automatic-bassoon\obligatorio\include\escolar.h
+	<Texto.h>
+
+1512439268 c:\users\developer\documents\automatic-bassoon\obligatorio\include\texto.h
+	<Libro.h>
+
+1512439010 c:\users\developer\documents\automatic-bassoon\obligatorio\include\libro.h
+
+1512439010 source:c:\users\developer\documents\automatic-bassoon\obligatorio\src\libro.cpp
+	"libro.h"
+
+1512439204 source:c:\users\developer\documents\automatic-bassoon\obligatorio\src\novela.cpp
+	"novela.h"
+
+1512439204 c:\users\developer\documents\automatic-bassoon\obligatorio\include\novela.h
+	<Libro.h>
+
+1512439268 source:c:\users\developer\documents\automatic-bassoon\obligatorio\src\texto.cpp
+	"texto.h"
+
+1512439405 source:c:\users\developer\documents\automatic-bassoon\obligatorio\src\fachada.cpp
+	"fachada.h"
+
+1512439405 c:\users\developer\documents\automatic-bassoon\obligatorio\include\fachada.h
+
+1512442659 source:c:\users\developer\documents\automatic-bassoon\obligatorio\src\fecha.cpp
+	"fecha.h"
+
+1512442608 c:\users\developer\documents\automatic-bassoon\obligatorio\include\fecha.h
+
+1512442794 source:c:\users\developer\documents\automatic-bassoon\obligatorio\src\cadena.cpp
+	"cadena.h"
+
+1512442721 c:\users\developer\documents\automatic-bassoon\obligatorio\include\cadena.h
+	<string.h>
+
