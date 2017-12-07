@@ -7,23 +7,23 @@
 class Escolar : public Texto
 {
     public:
-        /** Default constructor */
+
+        /** constructors and destructor */
         Escolar();
-        /** Default destructor */
-        virtual ~Escolar();
-        /** Copy constructor
-         *  \param other Object to copy from
-         */
+        Escolar(long int, Cadena, float, int, Cadena, Fecha, int);
         Escolar(const Escolar& other);
-        /** Assignment operator
-         *  \param other Object to assign from
-         *  \return A reference to this
-         */
+        virtual ~Escolar();
+
+        /** Operators override **/
         Escolar& operator=(const Escolar& other);
 
-    protected:
+        /** Getters and Setters **/
+        int getAnioEscuela();
+        void setAnioEscuela(int);
 
     private:
+
+        int anioEscuela;
 };
 
 #endif // ESCOLAR_H

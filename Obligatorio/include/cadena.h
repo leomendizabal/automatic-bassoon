@@ -5,7 +5,7 @@
 class Cadena
 {
     public:
-       public:
+
         Cadena();
         Cadena(char *);
         Cadena(const Cadena &);
@@ -17,9 +17,8 @@ class Cadena
 
         char * getCadena();
 
-    protected:
-
     private:
+
         char * cadena;
 };
 

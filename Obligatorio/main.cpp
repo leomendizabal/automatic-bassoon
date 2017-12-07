@@ -1,6 +1,8 @@
 #include <iostream>
 #include<stdio.h>
 #include "menu.h"
+#include "libro.h"
+#include "novela.h"
 
 int main()
 {
@@ -8,6 +10,14 @@ int main()
     bool salir = false;
     int opcion = -1;
     Menu menu;
+
+    /*
+    Libro * test = new Novela(1234, "prueba 1", 200, 0, "fantasia");
+    float precioBase = test->getPrecioBase();
+    float precio = test->getPrecio();
+    printf("Precio base: %f, Precio total: %f", precioBase, precio);
+    */
+
     do
     {
         menu.menuPrincipal(opcion);

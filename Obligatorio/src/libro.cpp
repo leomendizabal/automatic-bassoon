@@ -1,102 +1,51 @@
 #include "libro.h"
 
-Libro::Libro()
-{
+Libro::Libro(){
     //ctor
 }
 
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
- Libro::Libro(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas):m_titulo(titulo)
-{
-    m_isbn = isbn;
-    m_precioBase = precioBase;
-    m_unidadesVendidas = unidadesVendidas;
+Libro::Libro(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas) : titulo(titulo){
+    isbn = isbn;
+    precioBase = 129;//precioBase;
+    unidadesVendidas = unidadesVendidas;
 }
 
-
-
-Libro::~Libro()
-{
-    //dtor
-}
-
-Libro::Libro(const Libro& other)
-{
+Libro::Libro(const Libro& other){
     //copy ctor
 }
 
-/** @brief (Settear unidades vendidas)
-  *
-  * (settear la propiedad unidadesVendidas)
-  */
-void Libro::setUnidadesVendidas(int valor)
-{
-    m_unidadesVendidas =  valor;
+Libro::~Libro(){
+    //dtor
 }
 
-/** @brief (Retorna las cantidades vendidas)
-  *
-  * (valor de la propiedad unidadesVendidas)
-  */
-int Libro::getUnidadesVendidas()
-{
-    return m_unidadesVendidas;
+void Libro::setUnidadesVendidas(int valor){
+    unidadesVendidas =  valor;
 }
 
-/** @brief (Setter precio base)
-  *
-  * (carga el valor de el precio base)
-  */
-void Libro::setPrecioBase(float valor)
-{
-    m_precioBase = valor;
+int Libro::getUnidadesVendidas(){
+    return unidadesVendidas;
 }
 
-/** @brief (Retorna el precio base)
-  *
-  * (el valor de la propiedad precio base)
-  */
-float Libro::getPrecioBase()
-{
-    return m_precioBase;
+void Libro::setPrecioBase(float valor){
+    precioBase = valor;
 }
 
-/** @brief (Settea el titulo)
-  *
-  * (carga la propiedad titulo)
-  */
-void Libro::setTitulo(Cadena titulo)
-{
-    m_titulo = titulo;
+float Libro::getPrecioBase(){
+    return precioBase;
 }
 
-/** @brief (Retorna el titulo)
-  *
-  * (retorna el valor de la propiedad titulo)
-  */
-Cadena Libro::getTitulo()
-{
-    return m_titulo;
+void Libro::setTitulo(Cadena titulo){
+    titulo = titulo;
 }
 
-/** @brief (Settea el ISBN)
-  *
-  * (carga la propiedad isbn)
-  */
-void Libro::setIsbn(long int isbn)
-{
-    m_isbn = isbn;
+Cadena Libro::getTitulo(){
+    return titulo;
 }
 
-/** @brief (Retorna el isbn)
-  *
-  * (retorna el valor del isbn)
-  */
-long int Libro::getIsbn()
-{
-    return m_isbn;
+void Libro::setIsbn(long int isbn){
+    isbn = isbn;
 }
 
+long int Libro::getIsbn(){
+    return isbn;
+}

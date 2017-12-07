@@ -1,6 +1,6 @@
 #ifndef MENU_H_INCLUDED
 #define MENU_H_INCLUDED
-#include<stdio.h>
+#include <stdio.h>
 
 //Constants
 const int OPCION_MENU_1 = 1;
@@ -16,11 +16,13 @@ const int OPCION_MENU_10 = 10;
 const int OPCION_MENU_SALIR = 11;
 
 class Menu {
-    public:
 
-    Menu();
-    virtual ~Menu();
-    void menuPrincipal(int &);
+    private:
+
+    public:
+        Menu();
+        virtual ~Menu();
+        void menuPrincipal(int &);
 
 };
 

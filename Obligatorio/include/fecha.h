@@ -5,16 +5,14 @@
 class Fecha
 {
     public:
+
+        /** constructors and destructor */
         Fecha();
         Fecha(int,int,int);
         Fecha(const Fecha&);
         virtual ~Fecha();
-        //Get and set
-        int getDd();
-        int getMm();
-        int getAa();
 
-        //Sobrecarga
+        /** Operators override **/
         bool operator<(Fecha);
         bool operator==(Fecha);
         Fecha operator++();
@@ -23,10 +21,13 @@ class Fecha
         int operator-(Fecha);
         bool esValida();
 
-
-    protected:
+        /** Getters and Setters **/
+        int getDd();
+        int getMm();
+        int getAa();
 
     private:
+
         int dd,mm,aa;
         void incrementar();
 };

@@ -7,23 +7,26 @@
 class Novela : public Libro
 {
     public:
-        /** Default constructor */
+
+        /** constructors and destructor */
         Novela();
-        /** Default destructor */
-        virtual ~Novela();
-        /** Copy constructor
-         *  \param other Object to copy from
-         */
+        Novela(long int, Cadena, float, int, Cadena);
         Novela(const Novela& other);
-        /** Assignment operator
-         *  \param other Object to assign from
-         *  \return A reference to this
-         */
+        virtual ~Novela();
+
+        /** Operators override **/
         Novela& operator=(const Novela& other);
 
-    protected:
+        /** Getters and Setters **/
+        Cadena getGenero();
+        void setGenero(Cadena);
 
+        tipoLibro getTipo();
+
+        float getPrecio();
     private:
+
+        Cadena genero;
 };
 
 #endif // NOVELA_H

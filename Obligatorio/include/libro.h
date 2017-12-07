@@ -2,45 +2,44 @@
 #define LIBRO_H
 #include <cadena.h>
 
-enum Tipos {NOVELA, TEXTO, ESCOLAR};
+enum tipoLibro {NOVELA, TEXTO, ESCOLAR};
+const int DESCUENTO_NOVELA = 0.20;
+const int DESCUENTO_LIBRO_ANTIGUO = 0.25;
+const int DESCUENTO_ESCOLAR = 0.10;
 
 class Libro
 {
     public:
 
-
-        /** Default constructor */
+        /** constructors and destructor */
         Libro();
         Libro(long int, Cadena, float, int);
-        /** Default destructor */
-        virtual ~Libro();
-        /** Copy constructor
-         *  \param other Object to copy from
-         */
         Libro(const Libro& other);
+        virtual ~Libro();
 
-        /** Getter and Setter**/
+        /** Getters and Setters **/
         long int getIsbn();
         void setIsbn(long int);
 
         Cadena getTitulo();
         void setTitulo(Cadena);
 
-        virtual float getPrecioBase();
+        float getPrecioBase();
         void setPrecioBase(float);
+
+        virtual float getPrecio() = 0;
 
         int getUnidadesVendidas();
         void setUnidadesVendidas(int);
 
-        virtual Tipos getTipo() = 0;
-
-    protected:
+        virtual tipoLibro getTipo() = 0;
 
     private:
-        long int m_isbn;
-        Cadena m_titulo;
-        float m_precioBase;
-        int m_unidadesVendidas;
+
+        long int isbn;
+        Cadena titulo;
+        float precioBase;
+        int unidadesVendidas;
 };
 
 #endif // LIBRO_H

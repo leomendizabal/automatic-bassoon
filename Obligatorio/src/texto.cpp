@@ -1,80 +1,46 @@
 #include "texto.h"
 
-Texto::Texto()
-{
+Texto::Texto(){
     //ctor
 }
 
-/** @brief (one liner)
-  *
-  * (documentation goes here) : Falta contructor
-  */
- Texto::Texto(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas, Cadena materia, Fecha fechaPub)
-{
-
+Texto::Texto(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas, Cadena materia, Fecha fechaPub)
+    : Libro(isbn, titulo, precioBase, unidadesVendidas),
+    fechaPublicado(fechaPub){
+        materia = materia;
 }
 
 
-Texto::~Texto()
-{
+Texto::~Texto(){
     //dtor
 }
 
-Texto::Texto(const Texto& other)
-{
+Texto::Texto(const Texto& other){
     //copy ctor
 }
 
-Texto& Texto::operator=(const Texto& rhs)
-{
+Texto& Texto::operator=(const Texto& rhs){
     if (this == &rhs) return *this; // handle self assignment
     //assignment operator
     return *this;
 }
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
-void Texto::setFecha(Fecha fecha)
-{
-    m_fechaPublicado = fecha;
+
+void Texto::setFecha(Fecha fecha){
+    fechaPublicado = fecha;
 }
 
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
-Fecha Texto::getFecha()
-{
-    return m_fechaPublicado;
+Fecha Texto::getFecha(){
+    return fechaPublicado;
 }
 
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
-void Texto::setMateria(Cadena materia)
-{
-    m_materia = materia;
+void Texto::setMateria(Cadena materia){
+    materia = materia;
 }
 
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
-Cadena Texto::getMateria()
-{
-    return m_materia;
+Cadena Texto::getMateria(){
+    return materia;
 }
 
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
-float Texto::getPrecioBase()
-{
+float Texto::getPrecioBase(){
     return Libro::getPrecioBase(); // calcular precio base
 }
-
-
-

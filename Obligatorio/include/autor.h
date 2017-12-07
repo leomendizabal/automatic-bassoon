@@ -7,20 +7,17 @@
 class Autor
 {
     public:
-        /** Default constructor */
+
+        /** constructors and destructor */
         Autor();
-        /** Default destructor */
-        virtual ~Autor();
-        /** Copy constructor
-         *  \param other Object to copy from
-         */
+        Autor(long int, Cadena, Fecha);
         Autor(const Autor& other);
-        /** Assignment operator
-         *  \param other Object to assign from
-         *  \return A reference to this
-         */
+        virtual ~Autor();
+
+        /** Operators override **/
         Autor& operator=(const Autor& other);
 
+        /** Getters and Setters **/
         long int getCedula();
         void setCedula(long int);
 
@@ -30,12 +27,11 @@ class Autor
         Fecha getFecNacimiento();
         void setFecNacimiento(Fecha);
 
-    protected:
-
     private:
-        long int m_cedula;
-        Cadena m_nombre;
-        Fecha m_fec_nacimiento;
+
+        long int cedula;
+        Cadena nombre;
+        Fecha fecNacimiento;
 };
 
 #endif // AUTOR_H

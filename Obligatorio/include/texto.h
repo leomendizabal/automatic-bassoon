@@ -8,22 +8,16 @@ class Texto : public Libro
 {
     public:
 
-        /** Default constructor */
+        /** constructors and destructor */
         Texto();
-
         Texto(long int, Cadena, float, int, Cadena, Fecha);
-        /** Default destructor */
-        virtual ~Texto();
-        /** Copy constructor
-         *  \param other Object to copy from
-         */
         Texto(const Texto& other);
-        /** Assignment operator
-         *  \param other Object to assign from
-         *  \return A reference to this
-         */
+        virtual ~Texto();
+
+        /** Operators override **/
         Texto& operator=(const Texto& other);
 
+        /** Getters and Setters **/
         Cadena getMateria();
         void setMateria(Cadena);
 
@@ -31,11 +25,11 @@ class Texto : public Libro
         void setFecha(Fecha);
 
         float getPrecioBase();
-    protected:
 
     private:
-        Cadena m_materia;
-        Fecha m_fechaPublicado;
+
+        Cadena materia;
+        Fecha fechaPublicado;
 };
 
 #endif // TEXTO_H
