@@ -1,6 +1,8 @@
 #ifndef AUTOR_H
 #define AUTOR_H
 
+#include<cadena.h>
+#include<fecha.h>
 
 class Autor
 {
@@ -19,9 +21,21 @@ class Autor
          */
         Autor& operator=(const Autor& other);
 
+        long int getCedula();
+        void setCedula(long int);
+
+        Cadena getNombre();
+        void setNombre(Cadena);
+
+        Fecha getFecNacimiento();
+        void setFecNacimiento(Fecha);
+
     protected:
 
     private:
+        long int m_cedula;
+        Cadena m_nombre;
+        Fecha m_fec_nacimiento;
 };
 
 #endif // AUTOR_H
