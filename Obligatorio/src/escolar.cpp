@@ -28,5 +28,5 @@ int Escolar::getAnioEscuela(){
 }
 
 void Escolar::setAnioEscuela(int anioEscuela){
-    anioEscuela = anioEscuela;
+    this->anioEscuela = anioEscuela;
 }

@@ -11,12 +11,13 @@ int main()
     int opcion = -1;
     Menu menu;
 
-    /*
-    Libro * test = new Novela(1234, "prueba 1", 200, 0, "fantasia");
+
+    Libro * test = new Novela(1234, "prueba 1", 100, 0, "infantil");
     float precioBase = test->getPrecioBase();
     float precio = test->getPrecio();
-    printf("Precio base: %f, Precio total: %f", precioBase, precio);
-    */
+    int isbn = test->getIsbn();
+    printf("Precio base: %f, Precio total: %f, ISBN: %d", precioBase, precio, isbn);
+
 
     do
     {

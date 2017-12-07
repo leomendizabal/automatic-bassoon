@@ -5,9 +5,9 @@ Libro::Libro(){
 }
 
 Libro::Libro(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas) : titulo(titulo){
-    isbn = isbn;
-    precioBase = 129;//precioBase;
-    unidadesVendidas = unidadesVendidas;
+    this->isbn = isbn;
+    this->precioBase = precioBase;
+    this->unidadesVendidas = unidadesVendidas;
 }
 
 Libro::Libro(const Libro& other){
@@ -19,7 +19,7 @@ Libro::~Libro(){
 }
 
 void Libro::setUnidadesVendidas(int valor){
-    unidadesVendidas =  valor;
+    this->unidadesVendidas =  valor;
 }
 
 int Libro::getUnidadesVendidas(){
@@ -27,7 +27,7 @@ int Libro::getUnidadesVendidas(){
 }
 
 void Libro::setPrecioBase(float valor){
-    precioBase = valor;
+    this->precioBase = valor;
 }
 
 float Libro::getPrecioBase(){
@@ -35,7 +35,7 @@ float Libro::getPrecioBase(){
 }
 
 void Libro::setTitulo(Cadena titulo){
-    titulo = titulo;
+    this->titulo = titulo;
 }
 
 Cadena Libro::getTitulo(){
@@ -43,7 +43,7 @@ Cadena Libro::getTitulo(){
 }
 
 void Libro::setIsbn(long int isbn){
-    isbn = isbn;
+    this->isbn = isbn;
 }
 
 long int Libro::getIsbn(){

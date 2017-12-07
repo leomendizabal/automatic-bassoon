@@ -9,8 +9,8 @@ Autor::Autor(const Autor& other){
 }
 
 Autor::Autor(long int ci, Cadena nombre, Fecha fechaNac) : fecNacimiento(fechaNac){
-    cedula = ci;
-    nombre = nombre;
+    this->cedula = ci;
+    this->nombre = nombre;
 }
 
 Autor::~Autor(){
@@ -28,7 +28,7 @@ long int Autor::getCedula(){
 }
 
 void Autor::setCedula(long int ci){
-    cedula = ci;
+    this->cedula = ci;
 }
 
 Cadena Autor::getNombre(){
@@ -36,7 +36,7 @@ Cadena Autor::getNombre(){
 }
 
 void Autor::setNombre(Cadena nombre){
-    nombre = nombre;
+    this->nombre = nombre;
 }
 
 Fecha Autor::getFecNacimiento(){
@@ -44,5 +44,5 @@ Fecha Autor::getFecNacimiento(){
 }
 
 void Autor::setFecNacimiento(Fecha fechaNac){
-    fecNacimiento = fechaNac;
+    this->fecNacimiento = fechaNac;
 }

@@ -6,7 +6,7 @@ Novela::Novela(){
 
 Novela::Novela(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas, Cadena genero)
     : Libro(isbn, titulo, precioBase, unidadesVendidas){
-        genero = genero;
+        this->genero = genero;
 }
 
 Novela::Novela(const Novela& other){
@@ -28,7 +28,7 @@ Cadena Novela::getGenero(){
 }
 
 void Novela::setGenero(Cadena genero){
-    genero = genero;
+    this->genero = genero;
 }
 
 tipoLibro Novela::getTipo(){
@@ -39,7 +39,7 @@ float Novela::getPrecio(){
     float precio = getPrecioBase();
 
     if(genero == "infantil"){
-        precio -= precio * DESCUENTO_NOVELA;
+        precio -= (precio * DESCUENTO_NOVELA);
     }
 
     return precio;

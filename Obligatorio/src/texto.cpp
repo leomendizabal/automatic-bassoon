@@ -26,7 +26,7 @@ Texto& Texto::operator=(const Texto& rhs){
 }
 
 void Texto::setFecha(Fecha fecha){
-    fechaPublicado = fecha;
+    this->fechaPublicado = fecha;
 }
 
 Fecha Texto::getFecha(){
@@ -34,7 +34,7 @@ Fecha Texto::getFecha(){
 }
 
 void Texto::setMateria(Cadena materia){
-    materia = materia;
+    this->materia = materia;
 }
 
 Cadena Texto::getMateria(){
