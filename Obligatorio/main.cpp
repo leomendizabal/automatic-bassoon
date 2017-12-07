@@ -7,10 +7,10 @@ int main()
     //Declaraciones
     bool salir = false;
     int opcion = -1;
-
+    Menu menu;
     do
     {
-        MenuPrincipal(opcion);
+        menu.menuPrincipal(opcion);
         switch(opcion)
         {
         case OPCION_MENU_1:

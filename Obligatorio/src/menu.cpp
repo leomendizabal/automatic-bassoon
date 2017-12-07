@@ -1,6 +1,29 @@
 #include "menu.h"
 
-void MenuPrincipal(int &opcion)
+/** @brief (one liner)
+  *
+  * (documentation goes here)
+  */
+ Menu::~Menu()
+{
+
+}
+
+/** @brief (one liner)
+  *
+  * (documentation goes here)
+  */
+ Menu::Menu()
+{
+
+}
+
+
+/** @brief (one liner)
+  *
+  * (documentation goes here)
+  */
+void Menu::menuPrincipal(int &opcion)
 {
     printf("1. Ver requerimiento\n");
     printf("2. Ver requerimiento\n");

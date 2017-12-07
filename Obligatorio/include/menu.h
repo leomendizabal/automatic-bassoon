@@ -15,7 +15,14 @@ const int OPCION_MENU_9 = 9;
 const int OPCION_MENU_10 = 10;
 const int OPCION_MENU_SALIR = 11;
 
+class Menu {
+    public:
 
-void MenuPrincipal(int &opcion);
+    Menu();
+    virtual ~Menu();
+    void menuPrincipal(int &);
+
+};
+
 
 #endif // MENU_H_INCLUDED
