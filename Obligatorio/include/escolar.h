@@ -21,6 +21,8 @@ class Escolar : public Texto
         int getAnioEscuela();
         void setAnioEscuela(int);
 
+        float getPrecio();
+        tipoLibro getTipo();
     private:
 
         int anioEscuela;

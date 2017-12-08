@@ -24,7 +24,8 @@ class Texto : public Libro
         Fecha getFecha();
         void setFecha(Fecha);
 
-        float getPrecioBase();
+        float getPrecio();
+        tipoLibro getTipo();
 
     private:
 

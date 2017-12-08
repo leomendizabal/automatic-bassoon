@@ -3,6 +3,8 @@
 #include "menu.h"
 #include "libro.h"
 #include "novela.h"
+#include "texto.h"
+#include "escolar.h"
 
 int main()
 {
@@ -11,13 +13,21 @@ int main()
     int opcion = -1;
     Menu menu;
 
+    Fecha f(20, 12, 2016);
 
     Libro * test = new Novela(1234, "prueba 1", 100, 0, "infantil");
     float precioBase = test->getPrecioBase();
     float precio = test->getPrecio();
     int isbn = test->getIsbn();
-    printf("Precio base: %f, Precio total: %f, ISBN: %d", precioBase, precio, isbn);
+    printf("Precio base: %f, Precio total: %f, ISBN: %d\n\n", precioBase, precio, isbn);
 
+    Libro * escolar = new Escolar(1111, "preba escolar", 1000, 1, "asdf", f, 1);
+    float precioEscolar = escolar->getPrecio();
+    printf("precio escolar: %f\n", precioEscolar);
+
+    Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
+    float precioTexto = texto->getPrecio();
+    printf("precio texto: %f", precioTexto);
 
     do
     {

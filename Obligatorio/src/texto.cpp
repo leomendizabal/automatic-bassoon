@@ -41,6 +41,17 @@ Cadena Texto::getMateria(){
     return materia;
 }
 
-float Texto::getPrecioBase(){
-    return Libro::getPrecioBase(); // calcular precio base
+float Texto::getPrecio(){
+    float precio = getPrecioBase();
+    Fecha f(1,1,2017);
+
+    if(fechaPublicado < f){
+        precio -= (precio * DESCUENTO_LIBRO_ANTIGUO);
+    }
+
+    return precio;
+}
+
+tipoLibro Texto::getTipo(){
+    return TEXTO;
 }

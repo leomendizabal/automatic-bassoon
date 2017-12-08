@@ -39,7 +39,7 @@ float Novela::getPrecio(){
     float precio = getPrecioBase();
 
     if(genero == "infantil"){
-        precio -= (precio * DESCUENTO_NOVELA);
+        precio -= (precio * DESCUENTO_NOVELA_INFANTIL);
     }
 
     return precio;

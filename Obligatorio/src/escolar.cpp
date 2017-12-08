@@ -30,3 +30,17 @@ int Escolar::getAnioEscuela(){
 void Escolar::setAnioEscuela(int anioEscuela){
     this->anioEscuela = anioEscuela;
 }
+
+float Escolar::getPrecio(){
+    float precio = getPrecioBase();
+
+    if(anioEscuela <= 3){
+        precio -= precio * DESCUENTO_ESCOLAR;
+    }
+
+    return precio;
+}
+
+tipoLibro Escolar::getTipo(){
+    return ESCOLAR;
+}

@@ -3,12 +3,11 @@
 #include <cadena.h>
 
 enum tipoLibro {NOVELA, TEXTO, ESCOLAR};
-const float DESCUENTO_NOVELA = 0.20;
+const float DESCUENTO_NOVELA_INFANTIL = 0.20;
 const float DESCUENTO_LIBRO_ANTIGUO = 0.25;
 const float DESCUENTO_ESCOLAR = 0.10;
 
-class Libro
-{
+class Libro{
     public:
 
         /** constructors and destructor */
