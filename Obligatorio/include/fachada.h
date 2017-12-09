@@ -20,9 +20,9 @@ class Fachada{
         void listarAutores();
         float calcularMontoTotal();
         void registrarVenta(long int);
-        void cantidadTotalVendida();
+        int cantidadTotalVendida();
         void listarLibroMasVendido();
-        void cantidadAutoresPosterior(Fecha);
+        int cantidadAutoresPosterior(Fecha);
 
     private:
         Autores autores;
