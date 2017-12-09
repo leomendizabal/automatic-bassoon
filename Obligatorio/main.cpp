@@ -23,18 +23,8 @@ int main()
     Fecha f(20, 12, 2016);
 
     Libro * novela = new Novela(1234, "prueba 1", 100, 0, "infantil");
-    //float precioBase = novela->getPrecioBase();
-    //float precio = novela->getPrecio();
-    //int isbn = novela->getIsbn();
-    //printf("Precio base: %f, Precio total: %f, ISBN: %d\n\n", precioBase, precio, isbn);
-
     Libro * escolar = new Escolar(1111, "preba escolar", 1000, 1, "asdf", f, 1);
-    //float precioEscolar = escolar->getPrecio();
-    //printf("precio escolar: %f\n", precioEscolar);
-
     Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
-    //float precioTexto = texto->getPrecio();
-    //printf("precio texto: %f", precioTexto);
 
     coleccionLibros->insert(novela);
     coleccionLibros->insert(escolar);
