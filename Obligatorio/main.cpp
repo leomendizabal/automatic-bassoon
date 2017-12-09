@@ -1,6 +1,7 @@
 #include <iostream>
 #include<stdio.h>
 #include "menu.h"
+#include "fachada.h"
 #include "libros.h"
 #include "libro.h"
 #include "novela.h"
@@ -16,36 +17,21 @@ int main()
     bool salir = false;
     int opcion = -1;
     Menu menu;
+    Fachada fachada;
 
-    //pruebas
-    Libros * coleccionLibros = new Libros();
-
+    /** Prueba de libros **/
     Fecha f(20, 12, 2016);
-
     Libro * novela = new Novela(1234, "prueba 1", 100, 0, "infantil");
     Libro * escolar = new Escolar(1111, "preba escolar", 1000, 1, "asdf", f, 1);
     Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
 
-    coleccionLibros->insert(novela);
-    coleccionLibros->insert(escolar);
-    coleccionLibros->insert(texto);
+    fachada.registrarLibro(novela);
+    fachada.registrarLibro(escolar);
+    fachada.registrarLibro(texto);
 
-    Libro * n = coleccionLibros->find(1234);
-    float precioNovela = n->getPrecio();
-    int isbn = n->getIsbn();
-    printf("Precio total: %f, ISBN: %d\n\n", precioNovela, isbn);
+    fachada.listarLibros();
+    /** fin prueba libros **/
 
-    Libro * e = coleccionLibros->find(1111);
-    float precioEscolar = e->getPrecio();
-    printf("precio escolar: %f\n", precioEscolar);
-
-    Libro * t = coleccionLibros->find(1232);
-    float precioTexto = texto->getPrecio();
-    printf("precio texto: %f", precioTexto);
-
-   /* Cadena c("HOLA");
-    cout << "Hola"<< c.toLowerCase().getCadena();
-*/
     do
     {
         menu.menuPrincipal(opcion);

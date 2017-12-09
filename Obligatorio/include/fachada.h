@@ -1,9 +1,10 @@
 #ifndef FACHADA_H
 #define FACHADA_H
+#include <stdio.h>
 #include "autores.h"
+#include "libros.h"
 
-class Fachada
-{
+class Fachada{
     public:
         /** Default constructor */
         Fachada();
@@ -12,7 +13,7 @@ class Fachada
         virtual ~Fachada();
 
         /** Requerimientos **/
-        //void registrarLibro(Libro);
+        void registrarLibro(Libro *);
         void listarLibros();
         void listarLibro(long int);
         void registrarAutor(Autor);
@@ -23,10 +24,9 @@ class Fachada
         void listarLibroMasVendido();
         void cantidadAutoresPosterior(Fecha);
 
-    protected:
-
     private:
         Autores autores;
+        Libros libros;
 };
 
 #endif // FACHADA_H

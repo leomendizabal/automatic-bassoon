@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <iomanip>
 #include "cadena.h"
+#include "fachada.h"
 
 //Constants
 const int OPCION_MENU_1 = 1;
@@ -21,6 +22,7 @@ const int OPCION_MENU_SALIR = 11;
 class Menu {
 
     private:
+        Fachada fachada;
 
     public:
         Menu();

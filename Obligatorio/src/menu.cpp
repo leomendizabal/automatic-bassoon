@@ -1,30 +1,14 @@
 #include "menu.h"
 
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
- Menu::~Menu()
-{
+Menu::Menu(){
+    fachada = Fachada();
+}
+
+Menu::~Menu(){
 
 }
 
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
- Menu::Menu()
-{
-
-}
-
-
-/** @brief (one liner)
-  *
-  * (documentation goes here)
-  */
-void Menu::menuPrincipal(int &opcion)
-{
+void Menu::menuPrincipal(int &opcion){
     printf("1. Ver requerimiento\n");
     printf("2. Ver requerimiento\n");
     printf("3. Ver requerimiento\n");
