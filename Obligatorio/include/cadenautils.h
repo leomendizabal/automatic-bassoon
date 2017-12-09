@@ -4,14 +4,14 @@
 #include "cadena.h"
 const int LENGTH = 1024;
 
-class CadenaUtils
-{
+class CadenaUtils{
+
     public:
+
         CadenaUtils();
         virtual ~CadenaUtils();
-        Cadena convetirACadena(float);
-        Cadena convetirACadena(long int);
-    protected:
+        static Cadena convetirACadena(float);
+        static Cadena convetirACadena(long int);
 
     private:
 };
