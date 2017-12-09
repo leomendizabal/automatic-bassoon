@@ -1,6 +1,7 @@
 #ifndef AUTORES_H
 #define AUTORES_H
 #include "autor.h"
+#include "iteradorAutores.h"
 
 class Autores
 {
@@ -14,8 +15,7 @@ class Autores
 
         Autor * find(long int);
 
-//      Implementar iterador
-//        void listarAutores (Iterador &);
+        void listarAutores (iteradorAutores &);
 
     protected:
 
@@ -35,7 +35,7 @@ class Autores
 
         Autor * obtenerEnArbol(Nodo *, long int);
 
- //       void cargarIterador(Nodo *, Iterador &); // Falta implementar
+        void cargarIterador(Nodo *, iteradorAutores &);
 
 };
 

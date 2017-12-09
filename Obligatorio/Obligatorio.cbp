@@ -40,7 +40,10 @@
 		<Unit filename="include/escolar.h" />
 		<Unit filename="include/fachada.h" />
 		<Unit filename="include/fecha.h" />
+		<Unit filename="include/iteradorAutores.h" />
+		<Unit filename="include/iteradorLibros.h" />
 		<Unit filename="include/libro.h" />
+		<Unit filename="include/libros.h" />
 		<Unit filename="include/menu.h" />
 		<Unit filename="include/novela.h" />
 		<Unit filename="include/texto.h" />
@@ -51,7 +54,10 @@
 		<Unit filename="src/escolar.cpp" />
 		<Unit filename="src/fachada.cpp" />
 		<Unit filename="src/fecha.cpp" />
+		<Unit filename="src/iteradorAutores.cpp" />
+		<Unit filename="src/iteradorLibros.cpp" />
 		<Unit filename="src/libro.cpp" />
+		<Unit filename="src/libros.cpp" />
 		<Unit filename="src/menu.cpp" />
 		<Unit filename="src/novela.cpp" />
 		<Unit filename="src/texto.cpp" />
