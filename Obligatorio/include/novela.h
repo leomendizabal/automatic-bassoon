@@ -2,6 +2,7 @@
 #define NOVELA_H
 
 #include <Libro.h>
+#include "Autor.h"
 
 
 class Novela : public Libro
@@ -20,6 +21,7 @@ class Novela : public Libro
         /** Getters and Setters **/
         Cadena getGenero();
         void setGenero(Cadena);
+        void setAutor(Autor *);
 
         tipoLibro getTipo();
 
@@ -27,6 +29,7 @@ class Novela : public Libro
     private:
 
         Cadena genero;
+        Autor * autor;
 };
 
 #endif // NOVELA_H

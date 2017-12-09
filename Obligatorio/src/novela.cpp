@@ -1,12 +1,13 @@
 #include "novela.h"
 
 Novela::Novela(){
-    //ctor
+
 }
 
 Novela::Novela(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas, Cadena genero)
     : Libro(isbn, titulo, precioBase, unidadesVendidas){
         this->genero = genero;
+        autor=NULL;
 }
 
 Novela::Novela(const Novela& other){
@@ -29,6 +30,10 @@ Cadena Novela::getGenero(){
 
 void Novela::setGenero(Cadena genero){
     this->genero = genero;
+}
+
+void Novela::setAutor(Autor * aut){
+    autor = aut;
 }
 
 tipoLibro Novela::getTipo(){
