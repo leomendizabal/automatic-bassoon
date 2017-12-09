@@ -21,7 +21,7 @@ Novela& Novela::operator=(const Novela& rhs){
 }
 
 Novela::~Novela(){
-    //dtor
+    autor=NULL;
 }
 
 Cadena Novela::getGenero(){

@@ -37,8 +37,12 @@ void Fachada::listarAutores(){
 
 }
 
-void Fachada::registrarAutor(Autor autor){
-
+void Fachada::registrarAutor(Autor * autor){
+        long int ced = autor->getCedula();
+        if (autores.member(ced))
+            printf("Error , el autor ya existe");
+        else
+            autores.insert(autor);
 }
 
 void Fachada::listarLibro(long int cedula){
