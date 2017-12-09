@@ -1,6 +1,7 @@
 #ifndef LIBROS_H
 #define LIBROS_H
 #include "libro.h"
+#include "iteradorLibros.h"
 
 const int TAM = 100;
 
@@ -20,6 +21,8 @@ class Libros{
         // retorna el libro cuyo isbn es el ingresado
         //precondición: el libro es miembro de la colección
         Libro * find(int);
+
+        IteradorLibros listarLibros();
 
     private:
 

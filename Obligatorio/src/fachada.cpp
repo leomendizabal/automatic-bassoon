@@ -46,10 +46,28 @@ void Fachada::listarLibro(long int cedula){
 }
 
 void Fachada::listarLibros(){
+
+    IteradorLibros iterador = libros.listarLibros();
+
+    while(iterador.hayMasLibros()){
+        Libro * l = iterador.proximoLibro();
+        switch(l->getTipo()){
+        case NOVELA:
+            printf("novela\n");
+            break;
+        case TEXTO:
+            printf("texto\n");
+            break;
+        case ESCOLAR:
+            printf("escolar\n");
+            break;
+        }
+    }
+
     //TODO:
     //implementar esta funcion con el iterador
 
-    Libro * novela = libros.find(1234);
+    /*Libro * novela = libros.find(1234);
     float precioNovela = novela->getPrecio();
     int isbn = novela->getIsbn();
     printf("Precio total: %f, ISBN: %d\n\n", precioNovela, isbn);
@@ -61,5 +79,6 @@ void Fachada::listarLibros(){
     Libro * t = libros.find(1232);
     float precioTexto = t->getPrecio();
     printf("precio texto: %f", precioTexto);
+    */
 }
 
