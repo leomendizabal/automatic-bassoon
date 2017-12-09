@@ -44,3 +44,7 @@ float Escolar::getPrecio(){
 tipoLibro Escolar::getTipo(){
     return ESCOLAR;
 }
+
+Cadena Escolar::toString(){
+    return Libro::toString() + "ESCOLAR\n";
+}

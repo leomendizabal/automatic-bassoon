@@ -21,11 +21,13 @@ int main()
 
     /** Prueba de libros **/
     Fecha f(20, 12, 2016);
-    Libro * novela = new Novela(1234, "prueba 1", 100, 0, "infantil");
+    Libro * novela1 = new Novela(1234, "prueba 1", 100, 0, "infantil");
+    Libro * novela2 = new Novela(12345, "prueba 2", 100, 0, "infantil");
     Libro * escolar = new Escolar(1111, "preba escolar", 1000, 1, "asdf", f, 1);
     Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
 
-    fachada.registrarLibro(novela);
+    fachada.registrarLibro(novela1);
+    fachada.registrarLibro(novela2);
     fachada.registrarLibro(escolar);
     fachada.registrarLibro(texto);
 

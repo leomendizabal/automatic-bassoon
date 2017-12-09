@@ -49,3 +49,12 @@ void Libro::setIsbn(long int isbn){
 long int Libro::getIsbn(){
     return isbn;
 }
+
+Cadena Libro::toString(){
+    Cadena libro;
+    Cadena separador(" - ");
+
+    libro = Cadena("122")+separador+this->titulo+separador;
+
+    return libro;
+}

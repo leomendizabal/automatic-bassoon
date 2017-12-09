@@ -49,3 +49,8 @@ float Novela::getPrecio(){
 
     return precio;
 }
+
+Cadena Novela::toString(){
+    return Libro::toString() + "NOVELA\n";
+}
+

@@ -1,8 +1,13 @@
 #ifndef FACHADA_H
 #define FACHADA_H
 #include <stdio.h>
+#include <iostream>
 #include "autores.h"
 #include "libros.h"
+#include "libro.h"
+#include "novela.h"
+#include "texto.h"
+#include "escolar.h"
 
 class Fachada{
     public:
