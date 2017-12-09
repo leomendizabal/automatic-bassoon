@@ -23,9 +23,9 @@
  }
 
 //Implementar
-/*void Autores :: listarAutores(Iterador &iter){
+void Autores :: listarAutores(iteradorAutores &iter){
     cargarIterador(ABB, iter);
-}*/
+}
 
 
  //private
@@ -82,3 +82,14 @@
         a = NULL;
     }
  }
+
+ void Autores::cargarIterador(Nodo* a, iteradorAutores & iter) {
+    if (a != NULL) {
+        cargarIterador(a->hizq, iter);
+        iter.insertar(a->info);
+        cargarIterador(a->hder, iter);
+    }
+ }
+
+
+

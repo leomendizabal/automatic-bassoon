@@ -9,19 +9,30 @@ Fachada::~Fachada(){
     //dtor
 }
 
+
+int Fachada::cantidadAutoresPosterior(Fecha fecha){
+    iteradorAutores i;
+    int result = 0;
+    autores.listarAutores(i);
+    while(i.hayMasAutores()) {
+        Autor * aut = i.proximoAutor();
+        if(aut->getFecNacimiento() < fecha){
+            result+=1;
+        }
+    }
+    return result;
+}
+
 void Fachada::registrarLibro(Libro * l){
     libros.insert(l);
 }
 
-void Fachada::cantidadAutoresPosterior(Fecha fecha){
+int Fachada::cantidadTotalVendida(){
 
 }
 
 void Fachada::listarLibroMasVendido(){
 
-}
-
-void Fachada::cantidadTotalVendida(){
 
 }
 
