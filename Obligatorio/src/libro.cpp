@@ -54,7 +54,7 @@ Cadena Libro::toString(){
     Cadena libro;
     Cadena separador(" - ");
 
-    libro = Cadena("122")+separador+this->titulo+separador;
+    libro = CadenaUtils::convetirACadena(this->isbn)+separador+this->titulo+separador;
 
     return libro;
 }
