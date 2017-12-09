@@ -7,6 +7,7 @@ class Fachada
     public:
         /** Default constructor */
         Fachada();
+
         /** Default destructor */
         virtual ~Fachada();
 
