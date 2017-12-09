@@ -105,3 +105,15 @@ Cadena Cadena::operator+(Cadena input){
 char* Cadena::getCadena(){
     return cadena;
 }
+
+Cadena Cadena::toLowerCase() {
+    int largo = strlen(cadena) - 1;
+    for(int i=0; i < largo; i++){
+        if(cadena[i]>= 65 && cadena[i]<=90){
+            cadena[i] += 32;
+        }
+    }
+    return (*this);
+}
+
+

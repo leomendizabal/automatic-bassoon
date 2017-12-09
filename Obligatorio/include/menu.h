@@ -1,6 +1,9 @@
 #ifndef MENU_H_INCLUDED
 #define MENU_H_INCLUDED
+#include <iostream>
 #include <stdio.h>
+#include <iomanip>
+#include "cadena.h"
 
 //Constants
 const int OPCION_MENU_1 = 1;
@@ -23,7 +26,9 @@ class Menu {
         Menu();
         virtual ~Menu();
         void menuPrincipal(int &);
-
+        void registrarAutor();
+        void scan(Cadena &);
+        void print(Cadena);
 };
 
 

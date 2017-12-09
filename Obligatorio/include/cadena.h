@@ -2,6 +2,8 @@
 #define CADENA_H
 #include<string.h>
 
+const int MAX_LARGO = 1024;
+
 class Cadena
 {
     public:
@@ -14,7 +16,7 @@ class Cadena
         bool operator==(Cadena) ;
         bool operator<(Cadena) ;
         Cadena operator+(Cadena) ;
-
+        Cadena toLowerCase();
         char * getCadena();
 
     private:

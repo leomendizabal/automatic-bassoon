@@ -6,6 +6,8 @@
 #include "texto.h"
 #include "escolar.h"
 
+using namespace std;
+
 int main()
 {
 
@@ -32,13 +34,19 @@ int main()
     float precioTexto = texto->getPrecio();
     printf("precio texto: %f", precioTexto);
 
+   /* Cadena c("HOLA");
+    cout << "Hola"<< c.toLowerCase().getCadena();
+*/
     do
     {
         menu.menuPrincipal(opcion);
         switch(opcion)
         {
         case OPCION_MENU_1:
-
+            {Cadena c;
+            menu.scan(c);
+            menu.print(c);
+            }
             break;
         case OPCION_MENU_2:
 

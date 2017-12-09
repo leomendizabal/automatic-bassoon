@@ -23,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -34,6 +35,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/autor.h" />
+		<Unit filename="include/autores.h" />
 		<Unit filename="include/cadena.h" />
 		<Unit filename="include/escolar.h" />
 		<Unit filename="include/fachada.h" />
@@ -44,6 +46,7 @@
 		<Unit filename="include/texto.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/autor.cpp" />
+		<Unit filename="src/autores.cpp" />
 		<Unit filename="src/cadena.cpp" />
 		<Unit filename="src/escolar.cpp" />
 		<Unit filename="src/fachada.cpp" />
