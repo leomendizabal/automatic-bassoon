@@ -70,3 +70,16 @@ Libro * Libros::obtenerEnLista(Nodo * L, int isbn){
 
     return (L->info);
 }
+
+IteradorLibros Libros::listarLibros(){
+    IteradorLibros iterador;
+
+    for(int i=0; i<TAM; i++){
+        while(hash[i] != NULL){
+            iterador.insertar(hash[i]->info);
+            hash[i] = hash[i]->sig;
+        }
+    }
+
+    return iterador;
+}

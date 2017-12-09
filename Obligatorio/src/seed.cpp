@@ -13,9 +13,9 @@ Seed::~Seed()
 
 //private
 
-Autor* Seed::gerarAutor()
+Autor* Seed::generarAutor()
 {
-    return new Autor(rand(12345678,87654321),"Nombre",randomFecha());
+    return new Autor(randomNumber(12345678,87654321),"Nombre",randomFecha());
 }
 
 Libros Seed::generarLibros(int cant) {
@@ -29,7 +29,7 @@ Libros Seed::generarLibros(int cant) {
 Autores Seed::generarAutores(int cant){
     Autores as;
     for(int i = 0; i < cant; i++){
-        as.insert(generarAutores());
+        as.insert(generarAutor());
     }
     return as;
 }

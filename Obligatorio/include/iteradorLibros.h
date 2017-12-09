@@ -3,25 +3,24 @@
 #include "libro.h"
 
 
-class iteradorLibros
-{
+class IteradorLibros {
     public:
-         iteradorLibros();
+         IteradorLibros();
          // constructor por defecto
-         void insertar (Libro *);
+         void insertar(Libro *);
          // inserta un dueño en el iterador
-         bool hayMasLibros ();
+         bool hayMasLibros();
          // determina si quedan dueños por visitar en el iterador
-         Libro * proximoLibro ();
+         Libro * proximoLibro();
          // retorna el proximo duenio por visitar en el iterador
-        ~iteradorLibros();
+        ~IteradorLibros();
          // destructor
 
     private:
-
-        struct Nodo { Libro * info;
-                       Nodo * sig;
-                    };
+        struct Nodo {
+            Libro * info;
+            Nodo * sig;
+        };
         Nodo * prim;
         Nodo * ulti;
         Nodo * actual;

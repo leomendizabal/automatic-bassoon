@@ -24,7 +24,7 @@ class Seed
         Libros lib_diccionario;
 
         Libro * generarLibro();
-        Autor * gerarAutor();
+        Autor * generarAutor();
 
         int randomNumber(int,int);
         Fecha randomFecha();
