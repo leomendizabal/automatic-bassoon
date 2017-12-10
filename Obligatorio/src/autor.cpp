@@ -46,10 +46,10 @@ void Autor::setFecNacimiento(Fecha fechaNac){
     this->fecNacimiento = fechaNac;
 }
 
-void Autor::listarInfoAutor(){
 
+String Autor::toString(){
+    String separador(" - ");
+
+    return CadenaUtils::convetirACadena(this->cedula) + separador + this->nombre + separador + "01/01/1990"; //TODO: implementar toString en fecha. this->fecNacimiento;
 }
-
-
-
 

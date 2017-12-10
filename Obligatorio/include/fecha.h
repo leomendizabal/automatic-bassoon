@@ -1,6 +1,8 @@
 #ifndef FECHA_H
 #define FECHA_H
 #include "cadenautils.h"
+#include <iostream>
+
 
 class Fecha
 {
@@ -26,7 +28,8 @@ class Fecha
         int getDd();
         int getMm();
         int getAa();
-
+        void scan();
+        void print();
 
     private:
 

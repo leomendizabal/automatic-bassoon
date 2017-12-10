@@ -1,5 +1,6 @@
 #include "fecha.h"
 
+using namespace std;
 
 Fecha::Fecha()
 {
@@ -162,6 +163,7 @@ bool Fecha::esValida(){
     return esDdValido && esMmValido && esAaValido;
 }
 
+
 String Fecha::toString(){
     String strfech;
     String separador("/");
@@ -170,5 +172,17 @@ String Fecha::toString(){
 
     return strfech;
 }
+
+void Fecha::print(){
+    cout << dd <<"/"<< mm <<"/"<< aa;
+}
+
+void Fecha::scan() {
+    cout << "dia: ";cin >> dd;
+    cout << "mes: ";cin >> mm;
+    cout << "anio: ";cin >> aa;
+}
+
+
 
 
