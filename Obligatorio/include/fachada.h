@@ -35,6 +35,7 @@ class Fachada{
         int cantidadAutoresPosterior(Fecha);
 
         /** auxiliares **/
+        bool existeLibro(long int isbn);
         bool existeAutor(long int ci);
         Autor * obtenerAutor(long int ci);
 

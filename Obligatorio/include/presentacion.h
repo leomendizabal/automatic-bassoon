@@ -32,9 +32,9 @@ class Presentacion {
 
     private:
         Fachada fachada;
+        Error error;
         void imprimirError(TipoDeError codigo);
         void imprimirMensaje(MensajeExito);
-        Error error;
     public:
         Presentacion();
         virtual ~Presentacion();

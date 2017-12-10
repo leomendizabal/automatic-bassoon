@@ -63,62 +63,72 @@ void Presentacion::registrarLibro(tipoLibro tipo){
     long int isbn = 0;
     std::cout << "ISBN: ";
     std::cin >> isbn;
-    //titulo
-    std::cout << "Titulo: ";
-    String titulo;
-    titulo.scan();
-    //Precio
-    float precio = 0.0;
-    std::cout << "Precio: ";
-    std::cin >> precio;
 
-    if (tipo == NOVELA){
-        std::cout << "Genero: ";
-        String genero;
-        genero.scan();
-        std::cout << "Ci Autor: ";
-        long int ci;
-        std::cin >> ci;
-        Error e(false, SIN_ERROR);
+    if(!fachada.existeLibro(isbn)){
+        //titulo
+        std::cout << "Titulo: ";
+        String titulo;
+        titulo.scan();
+        //Precio
+        float precio = 0.0;
+        std::cout << "Precio: ";
+        std::cin >> precio;
 
-        bool existeAutor = fachada.existeAutor(ci);
+        if (tipo == NOVELA){
+            std::cout << "Genero: ";
+            String genero;
+            genero.scan();
+            std::cout << "Ci Autor: ";
+            long int ci;
+            std::cin >> ci;
 
-        if(!existeAutor){
-            imprimirError(NO_EXISTE_AUTOR);
-        }else {
-            Autor * autor = fachada.obtenerAutor(ci);
-            l = new Novela(isbn, titulo, precio, 0, genero);
-            ((Novela*)l)->setAutor(autor);
+            bool existeAutor = fachada.existeAutor(ci);
 
-            fachada.registrarLibro(l, e);
+            if(!existeAutor){
+                imprimirError(NO_EXISTE_AUTOR);
+            }else {
+                Autor * autor = fachada.obtenerAutor(ci);
+                l = new Novela(isbn, titulo, precio, 0, genero);
+                ((Novela*)l)->setAutor(autor);
 
-            if(e.hayError()){
-                imprimirError(LIBRO_NO_REGISTRADO);
-            }else{
-                imprimirMensaje(LIBRO_REGISTRADO);
+                fachada.registrarLibro(l, error);
             }
-        }
-        //novela = new Novela(isbn,titulo,precio,0,genero);*/
-    } else {
-        std::cout << "Fecha de publicacion: \n";
-        Fecha fecha;
-        fecha.scan();
-        std::cout << "Materia: \n";
-        String materia;
-        materia.scan();
-        if (tipo == ESCOLAR){
-            int anio = 0;
-            std::cout << "Anio de escuela: "; std::cin >> anio;
-            //escolar = new Escolar(isbn,titulo,precio,0,materia,fecha,anio);
         } else {
-         //texto = new Texto(isbn,titulo,precio,0,materia,fecha);
-        }
-    }
+            std::cout << "Fecha de publicacion: \n";
+            Fecha fecha;
+            fecha.scan();
 
+            std::cout << "Materia: \n";
+            String materia;
+            materia.scan();
+
+            if (tipo == ESCOLAR){
+                int anio = 0;
+                std::cout << "Año de escuela: ";
+                std::cin >> anio;
+
+                l = new Escolar(isbn,titulo,precio,0,materia,fecha,anio);
+            } else {
+                l = new Texto(isbn,titulo,precio,0,materia,fecha);
+            }
+
+            fachada.registrarLibro(l, this->error);
+        }
+
+        if(this->error.hayError()){
+            imprimirError(LIBRO_NO_REGISTRADO);
+        }else{
+            imprimirMensaje(LIBRO_REGISTRADO);
+        }
+    }else{
+        imprimirError(LIBRO_YA_EXISTE);
+    }
 }
 
 void Presentacion::listarLibroMasVendido(){
-
+     std::cout << "El libro mas vendido es: ";
+     Error e(false, SIN_ERROR);
+     fachada.listarLibroMasVendido(e);
 }
 
 void Presentacion::consultarCantidadVendida(){
@@ -196,12 +206,26 @@ void Presentacion::consultarCantidadDeAutores(){
 //SIN_ERROR,NO_EXISTE_LIBRO,NO_EXISTE_AUTOR,DICCIONARIOVACIO
 void Presentacion::imprimirError(TipoDeError codigo){
     switch(codigo){
-        case SIN_ERROR:break;
-        case NO_EXISTE_AUTOR:break;
-        case NO_EXISTE_LIBRO:break;
-        case DICCIONARIO_VACIO:break;
-        case LIBRO_YA_EXISTE:break;
-        case AUTOR_YA_EXISTE:break;
+        case SIN_ERROR:
+            break;
+        case NO_EXISTE_AUTOR:
+            std::cout << "ERROR: autor no existe\n";
+            break;
+        case NO_EXISTE_LIBRO:
+            std::cout << "ERROR: libro no existe\n";
+            break;
+        case DICCIONARIO_VACIO:
+            std::cout << "ERROR: diccionario vacio\n";
+            break;
+        case LIBRO_YA_EXISTE:
+            std::cout << "ERROR: libro ya existe\n";
+            break;
+        case AUTOR_YA_EXISTE:
+            std::cout << "ERROR: autor ya existe\n";
+            break;
+        case LIBRO_NO_REGISTRADO:
+            std::cout << "ERROR: libro no registrado\n";
+            break;
     }
 }
 
@@ -209,11 +233,11 @@ void Presentacion::imprimirMensaje(MensajeExito codigo){
 
     switch(codigo){
         case LIBRO_REGISTRADO: {
-            std::cout << "Libro registrado exitosamente";
+            std::cout << "Libro registrado exitosamente\n";
             break;
         }
         default:
-            std::cout << "Mensaje desconocido";
+            std::cout << "Mensaje desconocido\n";
     }
 }
 
