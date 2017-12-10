@@ -1,6 +1,8 @@
 #ifndef LIBRO_H
 #define LIBRO_H
 #include <cadena.h>
+#include <string.h>
+#include "cadenautils.h"
 
 enum tipoLibro {NOVELA, TEXTO, ESCOLAR};
 const float DESCUENTO_NOVELA_INFANTIL = 0.20;
@@ -32,7 +34,7 @@ class Libro{
         void setUnidadesVendidas(int);
 
         virtual tipoLibro getTipo() = 0;
-
+        virtual Cadena toString();
     private:
 
         long int isbn;

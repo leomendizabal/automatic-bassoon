@@ -26,6 +26,7 @@ class Novela : public Libro
         tipoLibro getTipo();
 
         float getPrecio();
+        Cadena toString();
     private:
 
         Cadena genero;

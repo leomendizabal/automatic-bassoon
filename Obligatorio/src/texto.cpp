@@ -55,3 +55,7 @@ float Texto::getPrecio(){
 tipoLibro Texto::getTipo(){
     return TEXTO;
 }
+
+Cadena Texto::toString(){
+    return Libro::toString() + "TEXTO\n";
+}
