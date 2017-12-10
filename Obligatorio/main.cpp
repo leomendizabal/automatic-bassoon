@@ -14,6 +14,7 @@ int main(){
 
     //Declaraciones
     bool salir = false;
+    bool atras = false;
     int opcion = -1;
     Presentacion menu;
     Fachada fachada;
@@ -59,23 +60,26 @@ int main(){
                     switch(opcion){
                         case OPCION_SUB_MENU_1:{
                                 menu.registrarLibro(NOVELA);
+                                atras = true;
                             }
                             break;
                          case OPCION_SUB_MENU_2:{
                                 menu.registrarLibro(TEXTO);
+                                atras = true;
                             }
                             break;
                          case OPCION_SUB_MENU_3:{
                                 menu.registrarLibro(ESCOLAR);
+                                atras = true;
                             }
                             break;
                          case OPCION_SUB_MENU_4:
-                            salir = true;
+                            atras = true;
                             break;
                          default:
                             break;
                     }
-                }while(!salir);
+                }while(!atras);
             }
             break;
         case OPCION_MENU_2:

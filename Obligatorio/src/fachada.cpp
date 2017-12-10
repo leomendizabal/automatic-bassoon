@@ -152,6 +152,12 @@ void Fachada::setAutores()
 
 }
 
+bool Fachada::existeLibro(long int isbn){
+    bool existe = libros.member(isbn);
+
+    return existe;
+}
+
 bool Fachada::existeAutor(long int ci){
     return autores.member(ci);
 }
