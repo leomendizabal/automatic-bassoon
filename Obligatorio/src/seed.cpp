@@ -18,14 +18,11 @@ Autor* Seed::generarAutor()
     return new Autor(randomNumber(12345678,87654321),"Nombre",randomFecha());
 }
 
-Libros Seed::generarLibros(int cant) {
-    Libros ls;
+void Seed::generarLibros(int cant,Libros &ls) {
     for(int i = 0; i < cant; i++){
         Libro * lib = generarLibro();
         ls.insert(lib);
-     printf("%ld\n",lib->getIsbn());
     }
-    return ls;
 }
 
 void Seed::generarAutores(Autores &as,int cant){

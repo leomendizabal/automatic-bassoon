@@ -15,7 +15,7 @@ class Seed
     public:
         Seed();
         virtual ~Seed();
-        Libros generarLibros(int);
+        void generarLibros(int,Libros &);
         void generarAutores(Autores&,int);
     protected:
 
