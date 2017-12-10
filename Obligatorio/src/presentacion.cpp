@@ -101,14 +101,24 @@ void Presentacion::registrarVenta(){
     long int isbn = 0;
     std::cout << "Ingrese ISBN: "; std::cin >> isbn;
     fachada.registrarVenta(isbn,error);
+
 }
 
 void Presentacion::montoRecaudado(){
-
+    float total = fachada.calcularMontoTotal();
+    std::cout << "Total recaudado: "<<total;
 }
 
 void Presentacion::listarAutores(){
+    iteradorAutores iter;
+    if (iter.hayMasAutores()){
+        while(iter.hayMasAutores()){
+            Autor * autor = iter.proximoAutor();
+            autor->toString().print();
+        }
+    } else {
 
+    }
 }
 
 void Presentacion::detalleLibro(){

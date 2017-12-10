@@ -90,5 +90,9 @@
     }
  }
 
+bool Autores::esVacio(){
+    return ABB == NULL;
+}
+
 
 

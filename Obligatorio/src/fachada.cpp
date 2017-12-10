@@ -68,14 +68,15 @@ void Fachada::listarLibroMasVendido(){
 
 }
 
-void Fachada::registrarVenta(long int isbn, Error &error){
+void Fachada::registrarVenta(long int isbn, Error &e){
      bool consulta = libros.member(isbn);
      if(consulta){
          Libro * vendido = libros.find(isbn);
          int cantidad = vendido->getUnidadesVendidas() + 1;
          vendido ->setUnidadesVendidas(cantidad);
      } else {
-
+        e.setError(true);
+        e.setNumeroError(NO_EXISTE_LIBRO);
      }
 }
 
@@ -89,13 +90,8 @@ float Fachada::calcularMontoTotal(){
     return resultado;
 }
 
-void Fachada::listarAutores(){
-    iteradorAutores i;
-    autores.listarAutores(i);
-    while(i.hayMasAutores()){
-        Autor * aux = i.proximoAutor();
-        std::cout << "Autor: "<< aux->getCedula() << "\n";
-    }
+void Fachada::listarAutores(iteradorAutores &iter){
+    autores.listarAutores(iter);
 }
 
 void Fachada::registrarAutor(Autor * autor,Error &e){
