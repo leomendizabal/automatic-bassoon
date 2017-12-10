@@ -1,6 +1,5 @@
 #include "str.h"
-#include <iostream>
-#include <string.h>
+
 using namespace std;
 String :: String()
 {

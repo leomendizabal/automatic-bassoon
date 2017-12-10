@@ -35,12 +35,25 @@ void Fachada::listarLibroMasVendido(){
 
 }
 
-void Fachada::registrarVenta(long int cedula){
-
+void Fachada::registrarVenta(long int isbn){
+     bool consulta = libros.member(isbn);
+     if(consulta){
+         Libro * vendido = libros.find(isbn);
+         int cantidad = vendido->getUnidadesVendidas() + 1;
+         vendido ->setUnidadesVendidas(cantidad);
+     } else {
+        //mensaje de error
+     }
 }
 
 float Fachada::calcularMontoTotal(){
-
+    float resultado = 0;
+    IteradorLibros iter = libros.listarLibros();
+    while (iter.hayMasLibros()) {
+        Libro * libro = iter.proximoLibro();
+        resultado += libro->getPrecio();
+    }
+    return resultado;
 }
 
 void Fachada::listarAutores(){
@@ -48,12 +61,11 @@ void Fachada::listarAutores(){
     autores.listarAutores(i);
     while(i.hayMasAutores()){
         Autor * aux = i.proximoAutor();
-        printf("%ld",aux->getCedula()) ;
     }
 }
 
-void Fachada::registrarAutor(Autor autor){
-
+void Fachada::registrarAutor(Autor * autor){
+    autores.insert(autor);
 }
 
 void Fachada::listarLibro(int isbn){

@@ -45,11 +45,17 @@ int main(){
                 do{
                     menu.subMenu(opcion);
                     switch(opcion){
-                        case OPCION_SUB_MENU_1:
+                        case OPCION_SUB_MENU_1:{
+                                menu.registrarLibro(NOVELA);
+                            }
                             break;
-                         case OPCION_SUB_MENU_2:
+                         case OPCION_SUB_MENU_2:{
+                                menu.registrarLibro(TEXTO);
+                            }
                             break;
-                         case OPCION_SUB_MENU_3:
+                         case OPCION_SUB_MENU_3:{
+                                menu.registrarLibro(ESCOLAR);
+                            }
                             break;
                          case OPCION_SUB_MENU_4:
                             salir = true;
@@ -61,31 +67,32 @@ int main(){
             }
             break;
         case OPCION_MENU_2:
-
+            menu.listarLibros();
             break;
         case OPCION_MENU_3:
-
+            menu.detalleLibro();
             break;
         case OPCION_MENU_4:{
                 menu.registrarAutor();
             }
             break;
         case OPCION_MENU_5:
+            menu.listarAutores();
             break;
         case OPCION_MENU_6:
-
+            menu.montoRecaudado();
             break;
         case OPCION_MENU_7:
-
+            menu.registrarVenta();
             break;
         case OPCION_MENU_8:
-
+            menu.consultarCantidadVendida();
             break;
         case OPCION_MENU_9:
-
+            menu.listarLibroMasVendido();
             break;
         case OPCION_MENU_10:
-
+            menu.consultarCantidadDeAutores();
             break;
         case OPCION_MENU_SALIR:
             salir = true;

@@ -1,5 +1,6 @@
 #include "fecha.h"
 
+using namespace std;
 
 Fecha::Fecha()
 {
@@ -160,6 +161,16 @@ bool Fecha::esValida(){
     bool esAaValido = (this->aa > 1990);
 
     return esDdValido && esMmValido && esAaValido;
+}
+
+void Fecha::print(){
+    cout << dd <<"/"<< mm <<"/"<< aa;
+}
+
+void Fecha::scan() {
+    cout << "dia: ";cin >> dd;
+    cout << "mes: ";cin >> mm;
+    cout << "anio: ";cin >> aa;
 }
 
 
