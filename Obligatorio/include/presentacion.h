@@ -35,7 +35,6 @@ class Presentacion {
         Error error;
         void imprimirError(TipoDeError codigo);
         void imprimirMensaje(MensajeExito);
-        Error error;
     public:
         Presentacion();
         virtual ~Presentacion();
