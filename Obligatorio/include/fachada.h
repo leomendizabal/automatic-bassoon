@@ -34,6 +34,10 @@ class Fachada{
         void listarLibroMasVendido(Error&);
         int cantidadAutoresPosterior(Fecha);
 
+        /** auxiliares **/
+        bool existeAutor(long int ci);
+        Autor * obtenerAutor(long int ci);
+
     private:
         Autores autores;
         Libros libros;
