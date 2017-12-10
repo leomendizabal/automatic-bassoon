@@ -26,15 +26,38 @@ void Fachada::registrarLibro(Libro * l){
     libros.insert(l);
 }
 
-int Fachada::cantidadTotalVendida(){
-
+void Fachada::cantidadTotalVendida(int novelas, int texto, int escolar){
+    IteradorLibros iter = libros.listarLibros();
+    while(iter.hayMasLibros()){
+        Libro * lib = iter.proximoLibro();
+        switch(lib->getTipo()){
+            case NOVELA:
+                novelas += lib->getUnidadesVendidas();
+                break;
+            case TEXTO:
+                texto += lib->getUnidadesVendidas();
+                break;
+            case ESCOLAR:
+                escolar += lib->getUnidadesVendidas();
+                break;
+        }
+    }
 }
 
 void Fachada::listarLibroMasVendido(){
        if (libros.esVacio())
             printf("Error , No hay ningun libro registrado");
        else{
+            Libro * l=libros.obtenerLibroMasVendido();
+            l->toStringComplete().print();
 
+            if(l->getTipo() == NOVELA){
+                   Autor * autor = ((Novela*)l)->getAutor();
+
+            if(autor){
+                autor->toString().print();
+            }
+        }
        }
 
 
