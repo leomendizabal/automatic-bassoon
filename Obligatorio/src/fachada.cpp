@@ -113,7 +113,7 @@ void Fachada::registrarAutor(Autor * autor,Error &e){
 
 }
 
-void Fachada::listarLibro(long int isbn){
+void Fachada::listarLibro(long int isbn,Error &e){
     bool existe = libros.member(isbn);
 
     if(existe){
@@ -128,7 +128,8 @@ void Fachada::listarLibro(long int isbn){
             }
         }
     }else {
-        printf("el libro NO existe");
+            e.setError(true);
+            e.setNumeroError(NO_EXISTE_LIBRO);
     }
 }
 

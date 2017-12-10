@@ -39,10 +39,10 @@ int main(){
 
     fachada.listarLibros();
     printf("Listar un libro: \n");
-    fachada.listarLibro(12345);
-    fachada.listarLibro(1234);
-    fachada.listarLibro(1111);
-    fachada.listarLibro(1232);
+    fachada.listarLibro(12345,e);
+    fachada.listarLibro(1234,e);
+    fachada.listarLibro(1111,e);
+    fachada.listarLibro(1232,e);
 
     /** fin prueba libros **/
     /*Seed s;
