@@ -49,9 +49,12 @@ void Fachada::cantidadTotalVendida(int novelas, int texto, int escolar){
     }
 }
 
-void Fachada::listarLibroMasVendido(){
-       if (libros.esVacio())
-            printf("Error , No hay ningun libro registrado");
+void Fachada::listarLibroMasVendido(Error &e){
+       if (libros.esVacio()){
+
+        e.setError(true);
+        e.setNumeroError(DICCIONARIO_VACIO);
+       }
        else{
             Libro * l=libros.obtenerLibroMasVendido();
             l->toStringComplete().print();
