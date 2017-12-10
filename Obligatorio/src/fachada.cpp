@@ -61,7 +61,7 @@ void Fachada::listarLibro(int isbn){
 
     if(existe){
         Libro * l = libros.find(isbn);
-        std::cout << l->toStringComplete().getCadena();
+        l->toStringComplete().print();
     }else {
         printf("el libro NO existe");
     }
@@ -73,7 +73,7 @@ void Fachada::listarLibros(){
 
     while(iterador.hayMasLibros()){
         Libro * l = iterador.proximoLibro();
-        std::cout << l->toString().getCadena();
+        l->toString().print();
     }
 }
 

@@ -4,7 +4,7 @@ Novela::Novela(){
 
 }
 
-Novela::Novela(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas, Cadena genero)
+Novela::Novela(long int isbn, String titulo, float precioBase, int unidadesVendidas, String genero)
     : Libro(isbn, titulo, precioBase, unidadesVendidas){
         this->genero = genero;
         autor=NULL;
@@ -24,11 +24,11 @@ Novela::~Novela(){
     //dtor
 }
 
-Cadena Novela::getGenero(){
+String Novela::getGenero(){
     return genero;
 }
 
-void Novela::setGenero(Cadena genero){
+void Novela::setGenero(String genero){
     this->genero = genero;
 }
 
@@ -50,10 +50,10 @@ float Novela::getPrecio(){
     return precio;
 }
 
-Cadena Novela::toString(){
+String Novela::toString(){
     return Libro::toString() + "NOVELA\n";
 }
 
-Cadena Novela::toStringComplete(){
+String Novela::toStringComplete(){
     return Libro::toStringComplete() + " genero: " + this->genero + "\n";
 }

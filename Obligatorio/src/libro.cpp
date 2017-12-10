@@ -4,7 +4,7 @@ Libro::Libro(){
     //ctor
 }
 
-Libro::Libro(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas) : titulo(titulo){
+Libro::Libro(long int isbn, String titulo, float precioBase, int unidadesVendidas) : titulo(titulo){
     this->isbn = isbn;
     this->precioBase = precioBase;
     this->unidadesVendidas = unidadesVendidas;
@@ -34,11 +34,11 @@ float Libro::getPrecioBase(){
     return precioBase;
 }
 
-void Libro::setTitulo(Cadena titulo){
+void Libro::setTitulo(String titulo){
     this->titulo = titulo;
 }
 
-Cadena Libro::getTitulo(){
+String Libro::getTitulo(){
     return titulo;
 }
 
@@ -50,19 +50,19 @@ long int Libro::getIsbn(){
     return isbn;
 }
 
-Cadena Libro::toString(){
-    Cadena libro;
-    Cadena separador(" - ");
+String Libro::toString(){
+    String libro;
+    String separador(" - ");
 
     libro = /*CadenaUtils::convetirACadena(this->isbn)+*/separador+this->titulo+separador;
 
     return libro;
 }
 
-Cadena Libro::toStringComplete(){
-    Cadena detalle;
+String Libro::toStringComplete(){
+    String detalle;
     char * t = "titulo: ";
-    Cadena titulo(t);
+    String titulo(t);
 
     detalle = titulo+this->titulo;
     //Cadena("ISBN: ")+CadenaUtils::convetirACadena(this->isbn)+" Titulo: "+this->titulo+" Precio base: " + CadenaUtils::convetirACadena(this->precioBase)+" unidades vendidas: "+CadenaUtils::convetirACadena(this->unidadesVendidas);

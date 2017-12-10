@@ -4,7 +4,7 @@ Escolar::Escolar(){
     //ctor
 }
 
-Escolar::Escolar(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas, Cadena materia, Fecha fechaPub, int anioEscuela)
+Escolar::Escolar(long int isbn, String titulo, float precioBase, int unidadesVendidas, String materia, Fecha fechaPub, int anioEscuela)
     : Texto(isbn, titulo, precioBase, unidadesVendidas, materia, fechaPub){
         anioEscuela = anioEscuela;
 }
@@ -45,10 +45,10 @@ tipoLibro Escolar::getTipo(){
     return ESCOLAR;
 }
 
-Cadena Escolar::toString(){
+String Escolar::toString(){
     return Libro::toString() + "ESCOLAR\n";
 }
 
-Cadena Escolar::toStringComplete(){
+String Escolar::toStringComplete(){
     return Libro::toStringComplete(); //+ CadenaUtils::convetirACadena(this->anioEscuela);
 }

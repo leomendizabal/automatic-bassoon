@@ -1,7 +1,6 @@
 #ifndef AUTOR_H
 #define AUTOR_H
-
-#include<cadena.h>
+#include<str.h>
 #include<fecha.h>
 
 class Autor
@@ -10,7 +9,7 @@ class Autor
 
         /** constructors and destructor */
         Autor();
-        Autor(long int, Cadena, Fecha);
+        Autor(long int, String, Fecha);
         Autor(const Autor& other);
         virtual ~Autor();
 
@@ -21,8 +20,8 @@ class Autor
         long int getCedula();
         void setCedula(long int);
 
-        Cadena getNombre();
-        void setNombre(Cadena);
+        String getNombre();
+        void setNombre(String);
 
         Fecha getFecNacimiento();
         void setFecNacimiento(Fecha);
@@ -30,7 +29,7 @@ class Autor
     private:
 
         long int cedula;
-        Cadena nombre;
+        String nombre;
         Fecha fecNacimiento;
 };
 

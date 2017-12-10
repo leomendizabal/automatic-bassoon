@@ -10,7 +10,7 @@ class Texto : public Libro
 
         /** constructors and destructor */
         Texto();
-        Texto(long int, Cadena, float, int, Cadena, Fecha);
+        Texto(long int, String, float, int, String, Fecha);
         Texto(const Texto& other);
         virtual ~Texto();
 
@@ -18,8 +18,8 @@ class Texto : public Libro
         Texto& operator=(const Texto& other);
 
         /** Getters and Setters **/
-        Cadena getMateria();
-        void setMateria(Cadena);
+        String getMateria();
+        void setMateria(String);
 
         Fecha getFecha();
         void setFecha(Fecha);
@@ -27,11 +27,11 @@ class Texto : public Libro
         float getPrecio();
         tipoLibro getTipo();
 
-        Cadena toString();
-        Cadena toStringComplete();
+        String toString();
+        String toStringComplete();
     private:
 
-        Cadena materia;
+        String materia;
         Fecha fechaPublicado;
 };
 

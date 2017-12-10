@@ -10,18 +10,13 @@
 #include"seed.h"
 using namespace std;
 
-int main()
-{
+int main(){
 
     //Declaraciones
     bool salir = false;
     int opcion = -1;
     Presentacion menu;
     Fachada fachada;
-
-    char myString[128];
-    int i = 123;
-    snprintf(myString, sizeof(myString), " %d", i);
 
     /** Prueba de libros **/
     Fecha f(20, 12, 2016);
@@ -45,12 +40,24 @@ int main()
     do
     {
         menu.menuPrincipal(opcion);
-        switch(opcion)
-        {
-        case OPCION_MENU_1:
-            {Cadena c;
-            menu.scan(c);
-            menu.print(c);
+        switch(opcion) {
+        case OPCION_MENU_1:{
+                do{
+                    menu.subMenu(opcion);
+                    switch(opcion){
+                        case OPCION_SUB_MENU_1:
+                            break;
+                         case OPCION_SUB_MENU_2:
+                            break;
+                         case OPCION_SUB_MENU_3:
+                            break;
+                         case OPCION_SUB_MENU_4:
+                            salir = true;
+                            break;
+                         default:
+                            break;
+                    }
+                }while(!salir);
             }
             break;
         case OPCION_MENU_2:
