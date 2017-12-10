@@ -94,7 +94,13 @@ void Presentacion::registrarLibro(tipoLibro tipo){
                 ((Novela*)l)->setAutor(autor);
 
                 fachada.registrarLibro(l, error);
+                if(error.hayError()){
+                    imprimirError(LIBRO_NO_REGISTRADO);
+                }else{
+                    imprimirMensaje(LIBRO_REGISTRADO);
+                }
             }
+
         } else {
             std::cout << "Fecha de publicacion: \n";
             Fecha fecha;
@@ -115,13 +121,14 @@ void Presentacion::registrarLibro(tipoLibro tipo){
             }
 
             fachada.registrarLibro(l, error);
+            if(error.hayError()){
+                imprimirError(LIBRO_NO_REGISTRADO);
+            }else{
+                imprimirMensaje(LIBRO_REGISTRADO);
+            }
         }
 
-        if(error.hayError()){
-            imprimirError(LIBRO_NO_REGISTRADO);
-        }else{
-            imprimirMensaje(LIBRO_REGISTRADO);
-        }
+
     }else{
         imprimirError(LIBRO_YA_EXISTE);
     }
@@ -183,7 +190,7 @@ void Presentacion::detalleLibro(){
 
     fachada.listarLibro(isbn, detalle, errorDetalle);
     if(errorDetalle.hayError()){
-         std::cout<< "hay error\n";
+        imprimirError(errorDetalle.getTipoError());
     } else {
         detalle.print();
     }
@@ -220,22 +227,22 @@ void Presentacion::imprimirError(TipoDeError codigo){
         case SIN_ERROR:
             break;
         case NO_EXISTE_AUTOR:
-            std::cout << "ERROR: autor no existe\n";
+            std::cout << "ERROR: autor no existe\n\n";
             break;
         case NO_EXISTE_LIBRO:
-            std::cout << "ERROR: libro no existe\n";
+            std::cout << "ERROR: libro no existe\n\n";
             break;
         case DICCIONARIO_VACIO:
-            std::cout << "ERROR: diccionario vacio\n";
+            std::cout << "ERROR: diccionario vacio\n\n";
             break;
         case LIBRO_YA_EXISTE:
-            std::cout << "ERROR: libro ya existe\n";
+            std::cout << "ERROR: libro ya existe\n\n";
             break;
         case AUTOR_YA_EXISTE:
-            std::cout << "ERROR: autor ya existe\n";
+            std::cout << "ERROR: autor ya existe\n\n";
             break;
         case LIBRO_NO_REGISTRADO:
-            std::cout << "ERROR: libro no registrado\n";
+            std::cout << "ERROR: libro no registrado\n\n";
             break;
     }
 }
@@ -244,19 +251,19 @@ void Presentacion::imprimirMensaje(MensajeExito codigo){
 
     switch(codigo){
         case LIBRO_REGISTRADO: {
-            std::cout << "Libro registrado exitosamente\n";
+            std::cout << "Libro registrado exitosamente\n\n";
             break;
         }
         case AUTOR_REGISTRADO: {
-            std::cout << "Autor registrado exitosamente\n";
+            std::cout << "Autor registrado exitosamente\n\n";
             break;
         }
         case VENTA_REGISTRADA:{
-            std::cout << "Venta registrada exitosamente\n";
+            std::cout << "Venta registrada exitosamente\n\n";
             break;
         }
         default:
-            std::cout << "Mensaje desconocido\n";
+            std::cout << "Mensaje desconocido\n\n";
     }
 }
 
