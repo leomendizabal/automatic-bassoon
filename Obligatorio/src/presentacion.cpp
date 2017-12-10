@@ -8,7 +8,7 @@
 
  Presentacion::Presentacion()
 {
-    fachada = Fachada();
+    //fachada = Fachada();
 }
 
 
@@ -44,7 +44,7 @@ void Presentacion::registrarAutor() {
     std::cin >> dd >> mm >> aa;
     Fecha f(dd,mm,aa);
     Autor autor(cedula,nombre,f);
-    fachada.registrarAutor(autor);
+    //fachada.registrarAutor(autor);
     std::cout <<"Autor ingresado correctamente"<<"\n";
 }
 
