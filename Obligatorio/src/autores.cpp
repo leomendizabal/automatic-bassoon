@@ -22,10 +22,9 @@
     return perteneceEnArbol(ABB, clave);
  }
 
-//Implementar
-void Autores :: listarAutores(iteradorAutores &iter){
+ void Autores :: listarAutores(iteradorAutores &iter){
     cargarIterador(ABB, iter);
-}
+ }
 
 
  //private

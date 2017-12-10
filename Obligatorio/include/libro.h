@@ -1,6 +1,9 @@
 #ifndef LIBRO_H
 #define LIBRO_H
 #include <cadena.h>
+#include <string.h>
+#include "cadenautils.h"
+#include "str.h"
 
 enum tipoLibro {NOVELA, TEXTO, ESCOLAR};
 const float DESCUENTO_NOVELA_INFANTIL = 0.20;
@@ -12,7 +15,7 @@ class Libro{
 
         /** constructors and destructor */
         Libro();
-        Libro(long int, Cadena, float, int);
+        Libro(long int, String, float, int);
         Libro(const Libro& other);
         virtual ~Libro();
 
@@ -20,8 +23,8 @@ class Libro{
         long int getIsbn();
         void setIsbn(long int);
 
-        Cadena getTitulo();
-        void setTitulo(Cadena);
+        String getTitulo();
+        void setTitulo(String);
 
         float getPrecioBase();
         void setPrecioBase(float);
@@ -33,11 +36,12 @@ class Libro{
 
 
         virtual tipoLibro getTipo() = 0;
-
+        virtual String toString();
+        virtual String toStringComplete();
     private:
 
         long int isbn;
-        Cadena titulo;
+        String titulo;
         float precioBase;
         int unidadesVendidas;
 };

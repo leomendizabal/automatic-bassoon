@@ -1,6 +1,6 @@
 #include "fachada.h"
 
-Fachada::Fachada():autores(),libros(){
+Fachada::Fachada() : autores(), libros(){
 
 }
 
@@ -51,7 +51,12 @@ float Fachada::calcularMontoTotal(){
 }
 
 void Fachada::listarAutores(){
-
+    iteradorAutores i;
+    autores.listarAutores(i);
+    while(i.hayMasAutores()){
+        Autor * aux = i.proximoAutor();
+        printf("%ld",aux->getCedula()) ;
+    }
 }
 
 void Fachada::registrarAutor(Autor * autor){
@@ -62,8 +67,15 @@ void Fachada::registrarAutor(Autor * autor){
             autores.insert(autor);
 }
 
-void Fachada::listarLibro(long int cedula){
+void Fachada::listarLibro(int isbn){
+    bool existe = libros.member(isbn);
 
+    if(existe){
+        Libro * l = libros.find(isbn);
+        l->toStringComplete().print();
+    }else {
+        printf("el libro NO existe");
+    }
 }
 
 void Fachada::listarLibros(){
@@ -72,34 +84,17 @@ void Fachada::listarLibros(){
 
     while(iterador.hayMasLibros()){
         Libro * l = iterador.proximoLibro();
-        switch(l->getTipo()){
-        case NOVELA:
-            printf("novela\n");
-            break;
-        case TEXTO:
-            printf("texto\n");
-            break;
-        case ESCOLAR:
-            printf("escolar\n");
-            break;
-        }
+        l->toString().print();
     }
+}
 
-    //TODO:
-    //implementar esta funcion con el iterador
+void Fachada::setLibros(Libros)
+{
 
-    /*Libro * novela = libros.find(1234);
-    float precioNovela = novela->getPrecio();
-    int isbn = novela->getIsbn();
-    printf("Precio total: %f, ISBN: %d\n\n", precioNovela, isbn);
+}
 
-    Libro * e = libros.find(1111);
-    float precioEscolar = e->getPrecio();
-    printf("precio escolar: %f\n", precioEscolar);
-
-    Libro * t = libros.find(1232);
-    float precioTexto = t->getPrecio();
-    printf("precio texto: %f", precioTexto);
-    */
+void Fachada::setAutores(Autores diccionario)
+{
+    autores = diccionario;
 }
 

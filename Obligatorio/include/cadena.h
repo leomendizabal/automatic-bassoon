@@ -20,7 +20,6 @@ class Cadena
         char * getCadena();
 
     private:
-
         char * cadena;
 };
 

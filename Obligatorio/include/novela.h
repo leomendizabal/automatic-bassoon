@@ -11,7 +11,7 @@ class Novela : public Libro
 
         /** constructors and destructor */
         Novela();
-        Novela(long int, Cadena, float, int, Cadena);
+        Novela(long int, String, float, int, String);
         Novela(const Novela& other);
         virtual ~Novela();
 
@@ -19,16 +19,20 @@ class Novela : public Libro
         Novela& operator=(const Novela& other);
 
         /** Getters and Setters **/
-        Cadena getGenero();
-        void setGenero(Cadena);
+        String getGenero();
+        void setGenero(String);
         void setAutor(Autor *);
 
         tipoLibro getTipo();
 
         float getPrecio();
+
+        String toString();
+        String toStringComplete();
+
     private:
 
-        Cadena genero;
+        String genero;
         Autor * autor;
 };
 

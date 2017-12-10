@@ -4,7 +4,7 @@ Texto::Texto(){
     //ctor
 }
 
-Texto::Texto(long int isbn, Cadena titulo, float precioBase, int unidadesVendidas, Cadena materia, Fecha fechaPub)
+Texto::Texto(long int isbn, String titulo, float precioBase, int unidadesVendidas, String materia, Fecha fechaPub)
     : Libro(isbn, titulo, precioBase, unidadesVendidas),
     fechaPublicado(fechaPub){
         materia = materia;
@@ -33,11 +33,11 @@ Fecha Texto::getFecha(){
     return fechaPublicado;
 }
 
-void Texto::setMateria(Cadena materia){
+void Texto::setMateria(String materia){
     this->materia = materia;
 }
 
-Cadena Texto::getMateria(){
+String Texto::getMateria(){
     return materia;
 }
 
@@ -54,4 +54,12 @@ float Texto::getPrecio(){
 
 tipoLibro Texto::getTipo(){
     return TEXTO;
+}
+
+String Texto::toString(){
+    return Libro::toString() + "TEXTO\n";
+}
+
+String Texto::toStringComplete(){
+    return Libro::toStringComplete() + " materia: " + this->materia + " Fecha 1/1/1990"; //TODO: implementar toString de fecha
 }

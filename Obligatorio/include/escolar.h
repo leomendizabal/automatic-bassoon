@@ -10,7 +10,7 @@ class Escolar : public Texto
 
         /** constructors and destructor */
         Escolar();
-        Escolar(long int, Cadena, float, int, Cadena, Fecha, int);
+        Escolar(long int, String, float, int, String, Fecha, int);
         Escolar(const Escolar& other);
         virtual ~Escolar();
 
@@ -23,6 +23,9 @@ class Escolar : public Texto
 
         float getPrecio();
         tipoLibro getTipo();
+
+        String toString();
+        String toStringComplete();
     private:
 
         int anioEscuela;
