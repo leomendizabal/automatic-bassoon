@@ -9,7 +9,7 @@ Presentacion::~Presentacion(){
 {
         //TODO: borrar esto.
         fachada.setAutores();
-        //fachada.setLibros();
+        fachada.setLibros();
 }
 
 void Presentacion::menuPrincipal(int &opcion){
@@ -34,9 +34,6 @@ void Presentacion::subMenu(int &op) {
     std::cout << "4.  Salir\n";
     std::cin >> op;
 }
-
-
-
 
 void Presentacion::registrarAutor() {
     Error error(false,SIN_ERROR);
@@ -179,10 +176,14 @@ void Presentacion::listarAutores(){
 void Presentacion::detalleLibro(){
     long int isbn = 0;
     String detalle;
-    std::cout<< "Ingrese ISBN: "; std::cin >> isbn;
-    fachada.listarLibro(isbn,detalle,error);
-    if(error.hayError()){
-         std::cout<< "hay error";
+    std::cout<< "Ingrese ISBN: ";
+    std::cin >> isbn;
+
+    Error errorDetalle;
+
+    fachada.listarLibro(isbn, detalle, errorDetalle);
+    if(errorDetalle.hayError()){
+         std::cout<< "hay error\n";
     } else {
         detalle.print();
     }
