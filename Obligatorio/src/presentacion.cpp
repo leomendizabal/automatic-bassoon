@@ -7,7 +7,8 @@ Presentacion::~Presentacion(){
 
  Presentacion::Presentacion()
 {
-
+        //TODO: borrar esto.
+        fachada.setAutores();
 }
 
 void Presentacion::menuPrincipal(int &opcion){
@@ -49,7 +50,8 @@ void Presentacion::registrarAutor() {
     Fecha f;
     f.scan();
     Autor * autor = new Autor(cedula,nombre,f);
-    //fachada.registrarAutor(autor);
+    fachada.registrarAutor(autor,error);
+    //Falta validar autor.
     std::cout <<"Autor ingresado correctamente";autor->getNombre().print();
 }
 
@@ -123,50 +125,78 @@ void Presentacion::registrarLibro(tipoLibro tipo){
 }
 
 void Presentacion::listarLibroMasVendido(){
-
+     std::cout << "El libro mas vendido es: ";
+     Error e(false, SIN_ERROR);
+     fachada.listarLibroMasVendido(e);
 }
 
 void Presentacion::consultarCantidadVendida(){
-
+    int novelas = 0,textos = 0, escolares = 0;
+    fachada.cantidadTotalVendida(novelas,textos,escolares);
+    std::cout << "Novelas: " << novelas << "\n";
+    std::cout << "Textos: " << textos << "\n";
+    std::cout << "Textos escolares: " << escolares << "\n";
 }
 
 void Presentacion::registrarVenta(){
     long int isbn = 0;
     std::cout << "Ingrese ISBN: "; std::cin >> isbn;
     fachada.registrarVenta(isbn,error);
-
+    //validar error;
 }
 
 void Presentacion::montoRecaudado(){
     float total = fachada.calcularMontoTotal();
-    std::cout << "Total recaudado: "<<total;
+    std::cout << "Total recaudado: "<<total<<"\n";
 }
 
 void Presentacion::listarAutores(){
     iteradorAutores iter;
+    fachada.listarAutores(iter);
     if (iter.hayMasAutores()){
         while(iter.hayMasAutores()){
             Autor * autor = iter.proximoAutor();
             autor->toString().print();
         }
     } else {
-
+        std::cout << "VAcio";
+        error.setError(true);
+        error.setNumeroError(DICCIONARIO_VACIO);
     }
 }
 
 void Presentacion::detalleLibro(){
     long int isbn = 0;
+    String detalle;
     std::cout<< "Ingrese ISBN: "; std::cin >> isbn;
+    fachada.listarLibro(isbn,detalle,error);
+    if(error.hayError()){
+        //validar error
+    } else {
+        detalle.print();
+    }
 }
 
 void Presentacion::listarLibros(){
-
+    IteradorLibros iter;
+    fachada.listarLibros(iter);
+    if (iter.hayMasLibros()) {
+       while(iter.hayMasLibros()){
+            Libro * l = iter.proximoLibro();
+            l->toString().print();
+       }
+    } else {
+        //TODO: Falta errores.
+    }
 }
 
 void Presentacion::consultarCantidadDeAutores(){
     Fecha fecha;
     std::cout << "Ingrese una fecha: ";
     fecha.scan();
+    int resultado = fachada.cantidadAutoresPosterior(fecha);
+    std::cout <<"\n" << "Los autores nacidos posterior a ";fecha.print();
+    std::cout <<" son: " << resultado << "\n";
 }
 
 
@@ -175,7 +205,8 @@ void Presentacion::consultarCantidadDeAutores(){
 //SIN_ERROR,NO_EXISTE_LIBRO,NO_EXISTE_AUTOR,DICCIONARIOVACIO
 void Presentacion::imprimirError(TipoDeError codigo){
     switch(codigo){
-        case SIN_ERROR:break;
+        case SIN_ERROR:
+            break;
         case NO_EXISTE_AUTOR:
             std::cout << "ERROR: autor no existe\n";
             break;
@@ -190,6 +221,9 @@ void Presentacion::imprimirError(TipoDeError codigo){
             break;
         case AUTOR_YA_EXISTE:
             std::cout << "ERROR: autor ya existe\n";
+            break;
+        case LIBRO_NO_REGISTRADO:
+            std::cout << "ERROR: libro no registrado\n";
             break;
     }
 }

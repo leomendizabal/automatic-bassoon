@@ -109,18 +109,18 @@ void Fachada::registrarAutor(Autor * autor,Error &e){
 
 }
 
-void Fachada::listarLibro(long int isbn,Error &e){
+void Fachada::listarLibro(long int isbn,String &result, Error &e){
     bool existe = libros.member(isbn);
 
     if(existe){
         Libro * l = libros.find(isbn);
-        l->toStringComplete().print();
+        result = l->toStringComplete();
 
         if(l->getTipo() == NOVELA){
             Autor * autor = ((Novela*)l)->getAutor();
 
             if(autor){
-                autor->toString().print();
+                result = result + autor->toString();
             }
         }
     }else {
@@ -129,26 +129,21 @@ void Fachada::listarLibro(long int isbn,Error &e){
     }
 }
 
-void Fachada::listarLibros(){
-
-    IteradorLibros iterador = libros.listarLibros();
-    while(iterador.hayMasLibros()){
-        Libro * l = iterador.proximoLibro();
-        l->toString().print();
-    }
+void Fachada::listarLibros(IteradorLibros &iter){
+    iter = libros.listarLibros();
 }
 
 void Fachada::setLibros()
 {
     Seed s;
-    libros = s.generarLibros(5);
+    s.generarLibros(5,libros);
 
 }
 
 void Fachada::setAutores()
 {
-    //Seed s;
-    //s.generarAutores(autores,5);
+    Seed s;
+    s.generarAutores(autores,5);
 
 }
 
