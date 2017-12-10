@@ -54,22 +54,47 @@ void Presentacion::registrarAutor() {
 }
 
 void Presentacion::registrarLibro(tipoLibro tipo){
-    Texto * texto;
-    Escolar * escolar;
-    Novela * novela;
+    Libro * l;
+
+    //ISBN
     long int isbn = 0;
-    std::cout << "ISBN: ";std::cin >> isbn;
-    //Nombre
+    std::cout << "ISBN: ";
+    std::cin >> isbn;
+    //titulo
     std::cout << "Titulo: ";
     String titulo;
     titulo.scan();
+    //Precio
     float precio = 0.0;
-    std::cout << "Precio: ";std::cin >> precio;
+    std::cout << "Precio: ";
+    std::cin >> precio;
 
     if (tipo == NOVELA){
         std::cout << "Genero: ";
         String genero;
         genero.scan();
+        std::cout << "Ci Autor: ";
+        long int ci;
+        std::cin >> ci;
+        Error e(false, SIN_ERROR);
+
+        bool existeAutor = fachada.existeAutor(ci);
+
+        if(!existeAutor){
+            imprimirError(NO_EXISTE_AUTOR);
+        }else {
+            Autor * autor = fachada.obtenerAutor(ci);
+            l = new Novela(isbn, titulo, precio, 0, genero);
+            ((Novela*)l)->setAutor(autor);
+
+            fachada.registrarLibro(l, e);
+
+            if(e.hayError()){
+                imprimirError(LIBRO_NO_REGISTRADO);
+            }else{
+                imprimirMensaje(LIBRO_REGISTRADO);
+            }
+        }
         //novela = new Novela(isbn,titulo,precio,0,genero);*/
     } else {
         std::cout << "Fecha de publicacion: \n";
@@ -135,6 +160,18 @@ void Presentacion::imprimirError(TipoDeError codigo){
         case NO_EXISTE_AUTOR:break;
         case NO_EXISTE_LIBRO:break;
         case DICCIONARIOVACIO:break;
+    }
+}
+
+void Presentacion::imprimirMensaje(MensajeExito codigo){
+
+    switch(codigo){
+        case LIBRO_REGISTRADO: {
+            std::cout << "Libro registrado exitosamente";
+            break;
+        }
+        default:
+            std::cout << "Mensaje desconocido";
     }
 }
 

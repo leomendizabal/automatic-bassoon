@@ -152,3 +152,10 @@ void Fachada::setAutores()
 
 }
 
+bool Fachada::existeAutor(long int ci){
+    return autores.member(ci);
+}
+
+Autor * Fachada::obtenerAutor(long int ci){
+    return autores.find(ci);
+}

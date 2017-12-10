@@ -24,17 +24,22 @@ const int OPCION_SUB_MENU_2 = 2;
 const int OPCION_SUB_MENU_3 = 3;
 const int OPCION_SUB_MENU_4 = 4;
 
+enum MensajeExito{
+    LIBRO_REGISTRADO
+};
+
 class Presentacion {
 
     private:
+        Fachada fachada;
         void imprimirError(TipoDeError codigo);
+        void imprimirMensaje(MensajeExito);
 
     public:
         Presentacion();
         virtual ~Presentacion();
         void menuPrincipal(int &);
         void subMenu(int &);
-
 
         void registrarAutor();
         void registrarLibro(tipoLibro);
