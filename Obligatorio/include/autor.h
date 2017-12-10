@@ -26,7 +26,6 @@ class Autor
 
         Fecha getFecNacimiento();
         void setFecNacimiento(Fecha);
-        void listarInfoAutor();
 
         String toString();
     private:

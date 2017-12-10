@@ -34,7 +34,16 @@ void Fachada::listarLibroMasVendido(){
        if (libros.esVacio())
             printf("Error , No hay ningun libro registrado");
        else{
+            Libro * l=libros.obtenerLibroMasVendido();
+            l->toStringComplete().print();
 
+            if(l->getTipo() == NOVELA){
+                   Autor * autor = ((Novela*)l)->getAutor();
+
+            if(autor){
+                autor->toString().print();
+            }
+        }
        }
 
 
