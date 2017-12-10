@@ -5,8 +5,9 @@ Presentacion::~Presentacion(){
 
 }
 
-Presentacion::Presentacion(){
-
+ Presentacion::Presentacion()
+{
+    //fachada = Fachada();
 }
 
 void Presentacion::menuPrincipal(int &opcion){
