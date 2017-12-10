@@ -30,10 +30,11 @@ int main(){
 
     ((Novela *)novela2)->setAutor(autor);
 
-    fachada.registrarLibro(novela1);
-    fachada.registrarLibro(novela2);
-    fachada.registrarLibro(escolar);
-    fachada.registrarLibro(texto);
+    Error e;
+    fachada.registrarLibro(novela1, e);
+    fachada.registrarLibro(novela2, e);
+    fachada.registrarLibro(escolar, e);
+    fachada.registrarLibro(texto, e);
 
     fachada.listarLibros();
     printf("Listar un libro: \n");

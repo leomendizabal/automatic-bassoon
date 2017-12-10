@@ -22,8 +22,13 @@ int Fachada::cantidadAutoresPosterior(Fecha fecha){
     return result;
 }
 
-void Fachada::registrarLibro(Libro * l){
-    libros.insert(l);
+void Fachada::registrarLibro(Libro * l, Error &e){
+    if(libros.member(l->getIsbn())){
+        e.setError(true);
+        e.setNumeroError(LIBRO_YA_EXISTE);
+    }else {
+        libros.insert(l);
+    }
 }
 
 void Fachada::cantidadTotalVendida(int novelas, int texto, int escolar){

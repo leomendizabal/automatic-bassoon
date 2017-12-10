@@ -2,6 +2,7 @@
 #define FACHADA_H
 #include <stdio.h>
 #include <iostream>
+#include "error.h"
 #include "autores.h"
 #include "libros.h"
 #include "libro.h"
@@ -22,7 +23,7 @@ class Fachada{
         void setLibros(Libros);
 
         /** Requerimientos **/
-        void registrarLibro(Libro *);
+        void registrarLibro(Libro *, Error&);
         void listarLibros();
         void listarLibro(long int);
         void registrarAutor(Autor *);

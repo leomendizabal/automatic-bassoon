@@ -1,7 +1,13 @@
 #ifndef ERROR_H
 #define ERROR_H
 
-enum TipoDeError{SIN_ERROR,NO_EXISTE_LIBRO,NO_EXISTE_AUTOR,DICCIONARIOVACIO};
+enum TipoDeError{
+    SIN_ERROR,
+    LIBRO_YA_EXISTE,
+    NO_EXISTE_LIBRO,
+    NO_EXISTE_AUTOR,
+    DICCIONARIOVACIO
+};
 
 class Error{
     public:
