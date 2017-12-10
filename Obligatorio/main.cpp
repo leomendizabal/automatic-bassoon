@@ -44,6 +44,7 @@ int main(){
     fachada.listarLibro(1111);
     fachada.listarLibro(1232);*/
 
+
     /** fin prueba libros **/
     /*Seed s;
     fachada.setAutores(s.generarAutores(20));
