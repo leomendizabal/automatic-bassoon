@@ -1,7 +1,8 @@
 #ifndef CADENAUTILS_H
 #define CADENAUTILS_H
 #include<stdio.h>
-#include "cadena.h"
+#include "str.h"
+
 const int LENGTH = 1024;
 
 class CadenaUtils{
@@ -10,9 +11,9 @@ class CadenaUtils{
 
         CadenaUtils();
         virtual ~CadenaUtils();
-        static Cadena convetirACadena(int);
-        static Cadena convetirACadena(float);
-        static Cadena convetirACadena(long int);
+        static String convetirACadena(int);
+        static String convetirACadena(float);
+        static String convetirACadena(long int);
 
     private:
 };

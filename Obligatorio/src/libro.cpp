@@ -54,18 +54,15 @@ String Libro::toString(){
     String libro;
     String separador(" - ");
 
-    libro = /*CadenaUtils::convetirACadena(this->isbn)+*/separador+this->titulo+separador;
+    libro = CadenaUtils::convetirACadena(this->isbn)+separador+this->titulo+separador;
 
     return libro;
 }
 
 String Libro::toStringComplete(){
     String detalle;
-    char * t = "titulo: ";
-    String titulo(t);
 
-    detalle = titulo+this->titulo;
-    //Cadena("ISBN: ")+CadenaUtils::convetirACadena(this->isbn)+" Titulo: "+this->titulo+" Precio base: " + CadenaUtils::convetirACadena(this->precioBase)+" unidades vendidas: "+CadenaUtils::convetirACadena(this->unidadesVendidas);
+    detalle = String("Titulo: ")+this->titulo+String(" ISBN: ")+CadenaUtils::convetirACadena(this->isbn)+String(" Titulo: ")+this->titulo+String(" Precio base: ") + CadenaUtils::convetirACadena(this->precioBase)+String(" unidades vendidas: ")+CadenaUtils::convetirACadena(this->unidadesVendidas);
 
     return detalle;
 }
