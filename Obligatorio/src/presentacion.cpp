@@ -50,7 +50,8 @@ void Presentacion::registrarAutor() {
     Fecha f;
     f.scan();
     Autor * autor = new Autor(cedula,nombre,f);
-    //fachada.registrarAutor(autor);
+    fachada.registrarAutor(autor,error);
+    //Falta validar autor.
     std::cout <<"Autor ingresado correctamente";autor->getNombre().print();
 }
 
@@ -122,7 +123,11 @@ void Presentacion::listarLibroMasVendido(){
 }
 
 void Presentacion::consultarCantidadVendida(){
-
+    int novelas = 0,textos = 0, escolares = 0;
+    fachada.cantidadTotalVendida(novelas,textos,escolares);
+    std::cout << "Novelas: " << novelas << "\n";
+    std::cout << "Textos: " << textos << "\n";
+    std::cout << "Textos escolares: " << escolares << "\n";
 }
 
 void Presentacion::registrarVenta(){
@@ -139,12 +144,14 @@ void Presentacion::montoRecaudado(){
 
 void Presentacion::listarAutores(){
     iteradorAutores iter;
+    fachada.listarAutores(iter);
     if (iter.hayMasAutores()){
         while(iter.hayMasAutores()){
             Autor * autor = iter.proximoAutor();
             autor->toString().print();
         }
     } else {
+        std::cout << "VAcio";
         error.setError(true);
         error.setNumeroError(DICCIONARIO_VACIO);
     }
@@ -163,7 +170,16 @@ void Presentacion::detalleLibro(){
 }
 
 void Presentacion::listarLibros(){
-
+    IteradorLibros iter;
+    fachada.listarLibros(iter);
+    if (iter.hayMasLibros()) {
+       while(iter.hayMasLibros()){
+            Libro * l = iter.proximoLibro();
+            l->toString().print();
+       }
+    } else {
+        //TODO: Falta errores.
+    }
 }
 
 void Presentacion::consultarCantidadDeAutores(){
