@@ -18,8 +18,8 @@ class Fachada{
         virtual ~Fachada();
 
         /**Get and set**/
-        void setAutores(Autores);
-        void setLibros(Libros);
+        void setAutores();
+        void setLibros();
 
         /** Requerimientos **/
         void registrarLibro(Libro *);
