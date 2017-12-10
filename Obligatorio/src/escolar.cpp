@@ -50,5 +50,5 @@ String Escolar::toString(){
 }
 
 String Escolar::toStringComplete(){
-    return Libro::toStringComplete(); //+ CadenaUtils::convetirACadena(this->anioEscuela);
+    return Libro::toStringComplete() + String(" Año: ") + CadenaUtils::convetirACadena(this->anioEscuela) + "\n";
 }

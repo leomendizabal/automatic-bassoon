@@ -25,14 +25,23 @@ int main(){
     Libro * escolar = new Escolar(1111, "preba escolar", 1000, 1, "asdf", f, 1);
     Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
 
-    fachada.registrarLibro(novela1);
-    fachada.registrarLibro(novela2);
-    fachada.registrarLibro(escolar);
-    fachada.registrarLibro(texto);
+    Autor * autor = new Autor(9999, String("autor1"), f);
+    fachada.registrarAutor(autor);
+
+    ((Novela *)novela2)->setAutor(autor);
+
+    Error e;
+    fachada.registrarLibro(novela1, e);
+    fachada.registrarLibro(novela2, e);
+    fachada.registrarLibro(escolar, e);
+    fachada.registrarLibro(texto, e);
 
     fachada.listarLibros();
     printf("Listar un libro: \n");
+    fachada.listarLibro(12345);
     fachada.listarLibro(1234);
+    fachada.listarLibro(1111);
+    fachada.listarLibro(1232);
 
     /** fin prueba libros **/
     /*Seed s;

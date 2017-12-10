@@ -22,8 +22,13 @@ int Fachada::cantidadAutoresPosterior(Fecha fecha){
     return result;
 }
 
-void Fachada::registrarLibro(Libro * l){
-    libros.insert(l);
+void Fachada::registrarLibro(Libro * l, Error &e){
+    if(libros.member(l->getIsbn())){
+        e.setError(true);
+        e.setNumeroError(LIBRO_YA_EXISTE);
+    }else {
+        libros.insert(l);
+    }
 }
 
 void Fachada::cantidadTotalVendida(int novelas, int texto, int escolar){
@@ -48,7 +53,16 @@ void Fachada::listarLibroMasVendido(){
        if (libros.esVacio())
             printf("Error , No hay ningun libro registrado");
        else{
+            Libro * l=libros.obtenerLibroMasVendido();
+            l->toStringComplete().print();
 
+            if(l->getTipo() == NOVELA){
+                   Autor * autor = ((Novela*)l)->getAutor();
+
+            if(autor){
+                autor->toString().print();
+            }
+        }
        }
 
 

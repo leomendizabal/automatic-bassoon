@@ -50,6 +50,6 @@ void Autor::setFecNacimiento(Fecha fechaNac){
 String Autor::toString(){
     String separador(" - ");
 
-    return CadenaUtils::convetirACadena(this->cedula) + separador + this->nombre + separador + "01/01/1990"; //TODO: implementar toString en fecha. this->fecNacimiento;
+    return CadenaUtils::convetirACadena(this->cedula) + separador + this->nombre + separador + this->fecNacimiento.toString() + "\n";
 }
 
