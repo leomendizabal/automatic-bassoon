@@ -1,5 +1,6 @@
 #ifndef AUTORES_H
 #define AUTORES_H
+#include<iostream>
 #include "autor.h"
 #include "iteradorAutores.h"
 

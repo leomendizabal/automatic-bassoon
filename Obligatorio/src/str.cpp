@@ -56,9 +56,10 @@ String String :: operator+ (String otro)
 void String :: scan()
 {
     char aux[MAX];
-    char c = cin.get();
+    char c;
+    cin >> c;
     int i=0;
-    while (c!='\0' && i<MAX-1)
+    while (c!='\n' && i < MAX-1)
     {
         aux[i] = c;
         i++;

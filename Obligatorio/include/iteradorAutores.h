@@ -1,5 +1,6 @@
 #ifndef ITERADORAUTORES_H
 #define ITERADORAUTORES_H
+#include<iostream>
 #include "autor.h"
 
 class iteradorAutores

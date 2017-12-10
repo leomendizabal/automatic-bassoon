@@ -30,8 +30,8 @@ int main(){
     //fachada.registrarLibro(escolar);
     //fachada.registrarLibro(texto);
 
-    fachada.listarLibros();
-    fachada.listarLibro(1234);
+    /*fachada.listarLibros();
+    fachada.listarLibro(1234);*/
 
     /** fin prueba libros **/
     /*Seed s;

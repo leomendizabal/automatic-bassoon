@@ -3,7 +3,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <iomanip>
-#include "cadena.h"
+#include "str.h"
 #include "fachada.h"
 
 //Constants
@@ -27,9 +27,6 @@ const int OPCION_SUB_MENU_4 = 4;
 class Presentacion {
 
     private:
-        void scan(Cadena &);
-        void print(Cadena);
-        //Fachada fachada;
 
     public:
         Presentacion();

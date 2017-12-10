@@ -8,9 +8,8 @@ Autor::Autor(const Autor& other){
     //copy ctor
 }
 
-Autor::Autor(long int ci, Cadena nombre, Fecha fechaNac) : fecNacimiento(fechaNac){
+Autor::Autor(long int ci, String nomb, Fecha fechaNac) :nombre(nomb), fecNacimiento(fechaNac){
     this->cedula = ci;
-    this->nombre = nombre;
 }
 
 Autor::~Autor(){
@@ -31,11 +30,11 @@ void Autor::setCedula(long int ci){
     this->cedula = ci;
 }
 
-Cadena Autor::getNombre(){
+String Autor::getNombre(){
     return nombre;
 }
 
-void Autor::setNombre(Cadena nombre){
+void Autor::setNombre(String nombre){
     this->nombre = nombre;
 }
 
