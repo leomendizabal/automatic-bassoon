@@ -203,6 +203,7 @@ void Presentacion::imprimirError(TipoDeError codigo){
         case DICCIONARIO_VACIO:break;
         case LIBRO_YA_EXISTE:break;
         case AUTOR_YA_EXISTE:break;
+        case LIBRO_NO_REGISTRADO:break;
     }
 }
 
