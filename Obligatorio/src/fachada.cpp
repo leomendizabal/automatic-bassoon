@@ -1,5 +1,5 @@
 #include "fachada.h"
-
+#include<stdio.h>
 Fachada::Fachada(){
     this->libros = Libros();
     this->autores = Autores();
@@ -45,7 +45,12 @@ float Fachada::calcularMontoTotal(){
 }
 
 void Fachada::listarAutores(){
-
+    iteradorAutores i;
+    autores.listarAutores(i);
+    while(i.hayMasAutores()){
+        Autor * aux = i.proximoAutor();
+        printf("%ld",aux->getCedula()) ;
+    }
 }
 
 void Fachada::registrarAutor(Autor autor){
@@ -91,5 +96,15 @@ void Fachada::listarLibros(){
     float precioTexto = t->getPrecio();
     printf("precio texto: %f", precioTexto);
     */
+}
+
+void Fachada::setLibros(Libros)
+{
+
+}
+
+void Fachada::setAutores(Autores diccionario)
+{
+    autores = diccionario;
 }
 

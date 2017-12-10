@@ -1,5 +1,5 @@
-#ifndef MENU_H_INCLUDED
-#define MENU_H_INCLUDED
+#ifndef PRESENTACION_H_INCLUDED
+#define PRESENTACION_H_INCLUDED
 #include <iostream>
 #include <stdio.h>
 #include <iomanip>
@@ -19,14 +19,14 @@ const int OPCION_MENU_9 = 9;
 const int OPCION_MENU_10 = 10;
 const int OPCION_MENU_SALIR = 11;
 
-class Menu {
+class Presentacion {
 
     private:
         Fachada fachada;
 
     public:
-        Menu();
-        virtual ~Menu();
+        Presentacion();
+        virtual ~Presentacion();
         void menuPrincipal(int &);
         void registrarAutor();
         void scan(Cadena &);
@@ -34,4 +34,4 @@ class Menu {
 };
 
 
-#endif // MENU_H_INCLUDED
+#endif // PRESENTACION_H_INCLUDED

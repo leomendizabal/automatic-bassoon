@@ -1,13 +1,13 @@
 #include <iostream>
 #include<stdio.h>
-#include "menu.h"
+#include "presentacion.h"
 #include "fachada.h"
 #include "libros.h"
 #include "libro.h"
 #include "novela.h"
 #include "texto.h"
 #include "escolar.h"
-
+#include"seed.h"
 using namespace std;
 
 int main()
@@ -16,8 +16,12 @@ int main()
     //Declaraciones
     bool salir = false;
     int opcion = -1;
-    Menu menu;
+    Presentacion menu;
     Fachada fachada;
+
+    char myString[128];
+    int i = 123;
+    snprintf(myString, sizeof(myString), " %d", i);
 
     /** Prueba de libros **/
     Fecha f(20, 12, 2016);
@@ -31,7 +35,9 @@ int main()
 
     fachada.listarLibros();
     /** fin prueba libros **/
-
+    /*Seed s;
+    fachada.setAutores(s.generarAutores(20));
+    fachada.listarAutores();*/
     do
     {
         menu.menuPrincipal(opcion);
@@ -49,16 +55,25 @@ int main()
         case OPCION_MENU_3:
 
             break;
-        case OPCION_MENU_4:
-
+        case OPCION_MENU_4:{
+                menu.registrarAutor();
+            }
             break;
         case OPCION_MENU_5:
-
             break;
         case OPCION_MENU_6:
 
             break;
         case OPCION_MENU_7:
+
+            break;
+        case OPCION_MENU_8:
+
+            break;
+        case OPCION_MENU_9:
+
+            break;
+        case OPCION_MENU_10:
 
             break;
         case OPCION_MENU_SALIR:

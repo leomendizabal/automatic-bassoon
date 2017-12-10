@@ -12,6 +12,10 @@ class Fachada{
         /** Default destructor */
         virtual ~Fachada();
 
+        /**Get and set**/
+        void setAutores(Autores);
+        void setLibros(Libros);
+
         /** Requerimientos **/
         void registrarLibro(Libro *);
         void listarLibros();
