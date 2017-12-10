@@ -9,7 +9,7 @@ Presentacion::~Presentacion(){
 {
         //TODO: borrar esto.
         fachada.setAutores();
-        fachada.setLibros();
+        //fachada.setLibros();
 }
 
 void Presentacion::menuPrincipal(int &opcion){

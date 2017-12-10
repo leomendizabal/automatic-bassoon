@@ -15,7 +15,7 @@ int Fachada::cantidadAutoresPosterior(Fecha fecha){
     autores.listarAutores(i);
     while(i.hayMasAutores()) {
         Autor * aut = i.proximoAutor();
-        if(aut->getFecNacimiento() < fecha){
+        if(fecha < aut->getFecNacimiento()){
             result+=1;
         }
     }
@@ -31,7 +31,7 @@ void Fachada::registrarLibro(Libro * l, Error &e){
     }
 }
 
-void Fachada::cantidadTotalVendida(int novelas, int texto, int escolar){
+void Fachada::cantidadTotalVendida(int &novelas, int &texto, int &escolar){
     IteradorLibros iter;
     libros.listarLibros(iter);
     while(iter.hayMasLibros()){
@@ -90,7 +90,7 @@ float Fachada::calcularMontoTotal(){
     libros.listarLibros(iter);
     while (iter.hayMasLibros()) {
         Libro * libro = iter.proximoLibro();
-        resultado += libro->getPrecio();
+        resultado += (libro->getPrecio() * libro->getUnidadesVendidas());
     }
     return resultado;
 }
