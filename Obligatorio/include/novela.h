@@ -27,6 +27,8 @@ class Novela : public Libro
 
         float getPrecio();
 
+        Autor * getAutor();
+
         String toString();
         String toStringComplete();
 

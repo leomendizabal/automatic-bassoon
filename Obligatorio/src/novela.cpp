@@ -32,10 +32,6 @@ void Novela::setGenero(String genero){
     this->genero = genero;
 }
 
-void Novela::setAutor(Autor * aut){
-    autor = aut;
-}
-
 tipoLibro Novela::getTipo(){
     return NOVELA;
 }
@@ -48,6 +44,14 @@ float Novela::getPrecio(){
     }
 
     return precio;
+}
+
+void Novela::setAutor(Autor * autor){
+    this->autor = autor;
+}
+
+Autor * Novela::getAutor(){
+    return this->autor;
 }
 
 String Novela::toString(){

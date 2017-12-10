@@ -56,12 +56,20 @@ void Fachada::registrarAutor(Autor autor){
 
 }
 
-void Fachada::listarLibro(int isbn){
+void Fachada::listarLibro(long int isbn){
     bool existe = libros.member(isbn);
 
     if(existe){
         Libro * l = libros.find(isbn);
         l->toStringComplete().print();
+
+        if(l->getTipo() == NOVELA){
+            Autor * autor = ((Novela*)l)->getAutor();
+
+            if(autor){
+                autor->toString().print();
+            }
+        }
     }else {
         printf("el libro NO existe");
     }
