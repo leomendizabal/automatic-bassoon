@@ -21,7 +21,7 @@ Novela& Novela::operator=(const Novela& rhs){
 }
 
 Novela::~Novela(){
-    //dtor
+    autor=NULL;
 }
 
 String Novela::getGenero(){
@@ -30,10 +30,6 @@ String Novela::getGenero(){
 
 void Novela::setGenero(String genero){
     this->genero = genero;
-}
-
-void Novela::setAutor(Autor * aut){
-    autor = aut;
 }
 
 tipoLibro Novela::getTipo(){
@@ -48,6 +44,14 @@ float Novela::getPrecio(){
     }
 
     return precio;
+}
+
+void Novela::setAutor(Autor * autor){
+    this->autor = autor;
+}
+
+Autor * Novela::getAutor(){
+    return this->autor;
 }
 
 String Novela::toString(){

@@ -2,6 +2,7 @@
 #define AUTOR_H
 #include<str.h>
 #include<fecha.h>
+#include "cadenautils.h"
 
 class Autor
 {
@@ -25,7 +26,9 @@ class Autor
 
         Fecha getFecNacimiento();
         void setFecNacimiento(Fecha);
+        void listarInfoAutor();
 
+        String toString();
     private:
 
         long int cedula;

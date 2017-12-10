@@ -34,6 +34,7 @@ class Libro{
         int getUnidadesVendidas();
         void setUnidadesVendidas(int);
 
+
         virtual tipoLibro getTipo() = 0;
         virtual String toString();
         virtual String toStringComplete();
