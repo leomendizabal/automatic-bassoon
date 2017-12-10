@@ -105,9 +105,10 @@ void Fachada::registrarAutor(Autor * autor,Error &e){
         if (autores.member(ced)){
             e.setError(true);
             e.setNumeroError(AUTOR_YA_EXISTE);
+        } else {
+             autores.insert(autor);
         }
-        else
-            autores.insert(autor);
+
 
 }
 

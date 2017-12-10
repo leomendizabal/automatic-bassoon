@@ -25,7 +25,7 @@ const int OPCION_SUB_MENU_3 = 3;
 const int OPCION_SUB_MENU_4 = 4;
 
 enum MensajeExito{
-    LIBRO_REGISTRADO
+    LIBRO_REGISTRADO, AUTOR_REGISTRADO, VENTA_REGISTRADA
 };
 
 class Presentacion {

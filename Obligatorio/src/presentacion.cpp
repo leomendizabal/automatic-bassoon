@@ -23,7 +23,7 @@ void Presentacion::menuPrincipal(int &opcion){
     std::cout << "8.  Consultar cantidades vendidas\n";
     std::cout << "9.  Listar libro mas vendido\n";
     std::cout << "10. Consultar cantidad de autores\n";
-    std::cout << "11. Salir del Presentacion.\n";
+    std::cout << "11. Salir.\n";
     std::cin >> opcion;
 }
 
@@ -39,6 +39,7 @@ void Presentacion::subMenu(int &op) {
 
 
 void Presentacion::registrarAutor() {
+    Error error(false,SIN_ERROR);
     //Cedula
     long int cedula;
     std::cout << "Cedula: ";
@@ -52,11 +53,15 @@ void Presentacion::registrarAutor() {
     f.scan();
     Autor * autor = new Autor(cedula,nombre,f);
     fachada.registrarAutor(autor,error);
-    //Falta validar autor.
-    std::cout <<"Autor ingresado correctamente";autor->getNombre().print();
+    if(error.hayError()){
+        imprimirError(error.getTipoError());
+    } else {
+        imprimirMensaje(AUTOR_REGISTRADO);
+    }
 }
 
 void Presentacion::registrarLibro(tipoLibro tipo){
+    Error error(false,SIN_ERROR);
     Libro * l;
 
     //ISBN
@@ -112,10 +117,10 @@ void Presentacion::registrarLibro(tipoLibro tipo){
                 l = new Texto(isbn,titulo,precio,0,materia,fecha);
             }
 
-            fachada.registrarLibro(l, this->error);
+            fachada.registrarLibro(l, error);
         }
 
-        if(this->error.hayError()){
+        if(error.hayError()){
             imprimirError(LIBRO_NO_REGISTRADO);
         }else{
             imprimirMensaje(LIBRO_REGISTRADO);
@@ -141,9 +146,14 @@ void Presentacion::consultarCantidadVendida(){
 
 void Presentacion::registrarVenta(){
     long int isbn = 0;
+    Error error(false, SIN_ERROR);
     std::cout << "Ingrese ISBN: "; std::cin >> isbn;
     fachada.registrarVenta(isbn,error);
-    //validar error;
+    if(error.hayError()){
+        imprimirError(error.getTipoError());
+    } else {
+        imprimirMensaje(VENTA_REGISTRADA);
+    }
 }
 
 void Presentacion::montoRecaudado(){
@@ -152,6 +162,7 @@ void Presentacion::montoRecaudado(){
 }
 
 void Presentacion::listarAutores(){
+    Error error(false,SIN_ERROR);
     iteradorAutores iter;
     fachada.listarAutores(iter);
     if (iter.hayMasAutores()){
@@ -160,7 +171,6 @@ void Presentacion::listarAutores(){
             autor->toString().print();
         }
     } else {
-        std::cout << "VAcio";
         error.setError(true);
         error.setNumeroError(DICCIONARIO_VACIO);
     }
@@ -187,7 +197,7 @@ void Presentacion::listarLibros(){
             l->toString().print();
        }
     } else {
-        //TODO: Falta errores.
+       imprimirError(DICCIONARIO_VACIO);
     }
 }
 
@@ -234,6 +244,14 @@ void Presentacion::imprimirMensaje(MensajeExito codigo){
     switch(codigo){
         case LIBRO_REGISTRADO: {
             std::cout << "Libro registrado exitosamente\n";
+            break;
+        }
+        case AUTOR_REGISTRADO: {
+            std::cout << "Autor registrado exitosamente\n";
+            break;
+        }
+        case VENTA_REGISTRADA:{
+            std::cout << "Venta registrada exitosamente\n";
             break;
         }
         default:
