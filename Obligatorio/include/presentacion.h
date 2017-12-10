@@ -34,7 +34,7 @@ class Presentacion {
         Fachada fachada;
         void imprimirError(TipoDeError codigo);
         void imprimirMensaje(MensajeExito);
-
+        Error error;
     public:
         Presentacion();
         virtual ~Presentacion();
