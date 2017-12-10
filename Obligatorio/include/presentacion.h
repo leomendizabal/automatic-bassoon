@@ -5,7 +5,7 @@
 #include <iomanip>
 #include "str.h"
 #include "fachada.h"
-
+#include "error.h"
 //Constants
 const int OPCION_MENU_1 = 1;
 const int OPCION_MENU_2 = 2;
@@ -27,6 +27,7 @@ const int OPCION_SUB_MENU_4 = 4;
 class Presentacion {
 
     private:
+        void imprimirError(TipoDeError codigo);
 
     public:
         Presentacion();
@@ -37,6 +38,14 @@ class Presentacion {
 
         void registrarAutor();
         void registrarLibro(tipoLibro);
+        void listarLibros();
+        void detalleLibro();
+        void listarAutores();
+        void montoRecaudado();
+        void registrarVenta();
+        void consultarCantidadVendida();
+        void listarLibroMasVendido();
+        void consultarCantidadDeAutores();
 };
 
 

@@ -1,6 +1,6 @@
 #ifndef FECHA_H
 #define FECHA_H
-
+#include <iostream>
 
 class Fecha
 {
@@ -26,6 +26,8 @@ class Fecha
         int getMm();
         int getAa();
 
+        void scan();
+        void print();
     private:
 
         int dd,mm,aa;

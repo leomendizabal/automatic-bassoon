@@ -1,6 +1,7 @@
 #ifndef _Str_H
 #define _Str_H
-
+#include <iostream>
+#include <string.h>
 const int MAX = 80;
 class String
 {
