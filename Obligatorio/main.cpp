@@ -30,7 +30,7 @@ int main(){
 
     ((Novela *)novela2)->setAutor(autor);
 
-    Error e;
+    /*Error e;
     fachada.registrarAutor(autor,e);
     fachada.registrarLibro(novela1, e);
     fachada.registrarLibro(novela2, e);
@@ -42,7 +42,8 @@ int main(){
     fachada.listarLibro(12345);
     fachada.listarLibro(1234);
     fachada.listarLibro(1111);
-    fachada.listarLibro(1232);
+    fachada.listarLibro(1232);*/
+
 
     /** fin prueba libros **/
     /*Seed s;
@@ -112,7 +113,6 @@ int main(){
             printf("Opcion no implementada\n");
             break;
         }
-
 
     }
     while(!salir);

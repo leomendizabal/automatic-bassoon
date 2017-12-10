@@ -7,7 +7,7 @@ Presentacion::~Presentacion(){
 
  Presentacion::Presentacion()
 {
-    //fachada = Fachada();
+
 }
 
 void Presentacion::menuPrincipal(int &opcion){
@@ -125,14 +125,25 @@ void Presentacion::consultarCantidadVendida(){
 void Presentacion::registrarVenta(){
     long int isbn = 0;
     std::cout << "Ingrese ISBN: "; std::cin >> isbn;
+    fachada.registrarVenta(isbn,error);
+
 }
 
 void Presentacion::montoRecaudado(){
-
+    float total = fachada.calcularMontoTotal();
+    std::cout << "Total recaudado: "<<total;
 }
 
 void Presentacion::listarAutores(){
+    iteradorAutores iter;
+    if (iter.hayMasAutores()){
+        while(iter.hayMasAutores()){
+            Autor * autor = iter.proximoAutor();
+            autor->toString().print();
+        }
+    } else {
 
+    }
 }
 
 void Presentacion::detalleLibro(){
@@ -159,7 +170,9 @@ void Presentacion::imprimirError(TipoDeError codigo){
         case SIN_ERROR:break;
         case NO_EXISTE_AUTOR:break;
         case NO_EXISTE_LIBRO:break;
-        case DICCIONARIOVACIO:break;
+        case DICCIONARIO_VACIO:break;
+        case LIBRO_YA_EXISTE:break;
+        case AUTOR_YA_EXISTE:break;
     }
 }
 

@@ -49,9 +49,12 @@ void Fachada::cantidadTotalVendida(int novelas, int texto, int escolar){
     }
 }
 
-void Fachada::listarLibroMasVendido(){
-       if (libros.esVacio())
-            printf("Error , No hay ningun libro registrado");
+void Fachada::listarLibroMasVendido(Error &e){
+       if (libros.esVacio()){
+
+        e.setError(true);
+        e.setNumeroError(DICCIONARIO_VACIO);
+       }
        else{
             Libro * l=libros.obtenerLibroMasVendido();
             l->toStringComplete().print();
@@ -68,14 +71,15 @@ void Fachada::listarLibroMasVendido(){
 
 }
 
-void Fachada::registrarVenta(long int isbn){
+void Fachada::registrarVenta(long int isbn, Error &e){
      bool consulta = libros.member(isbn);
      if(consulta){
          Libro * vendido = libros.find(isbn);
          int cantidad = vendido->getUnidadesVendidas() + 1;
          vendido ->setUnidadesVendidas(cantidad);
      } else {
-        //mensaje de error
+        e.setError(true);
+        e.setNumeroError(NO_EXISTE_LIBRO);
      }
 }
 
@@ -89,13 +93,8 @@ float Fachada::calcularMontoTotal(){
     return resultado;
 }
 
-void Fachada::listarAutores(){
-    iteradorAutores i;
-    autores.listarAutores(i);
-    while(i.hayMasAutores()){
-        Autor * aux = i.proximoAutor();
-        std::cout << "Autor: "<< aux->getCedula() << "\n";
-    }
+void Fachada::listarAutores(iteradorAutores &iter){
+    autores.listarAutores(iter);
 }
 
 void Fachada::registrarAutor(Autor * autor,Error &e){
@@ -110,7 +109,7 @@ void Fachada::registrarAutor(Autor * autor,Error &e){
 
 }
 
-void Fachada::listarLibro(long int isbn){
+void Fachada::listarLibro(long int isbn,Error &e){
     bool existe = libros.member(isbn);
 
     if(existe){
@@ -125,7 +124,8 @@ void Fachada::listarLibro(long int isbn){
             }
         }
     }else {
-        printf("el libro NO existe");
+            e.setError(true);
+            e.setNumeroError(NO_EXISTE_LIBRO);
     }
 }
 

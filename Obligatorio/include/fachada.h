@@ -25,13 +25,13 @@ class Fachada{
         /** Requerimientos **/
         void registrarLibro(Libro *, Error&);
         void listarLibros();
-        void listarLibro(long int);
+        void listarLibro(long int,Error&);
         void registrarAutor(Autor *,Error&);
-        void listarAutores();
+        void listarAutores(iteradorAutores &);
         float calcularMontoTotal();
-        void registrarVenta(long int);
+        void registrarVenta(long int, Error&);
         void cantidadTotalVendida(int, int, int);
-        void listarLibroMasVendido();
+        void listarLibroMasVendido(Error&);
         int cantidadAutoresPosterior(Fecha);
 
         /** auxiliares **/

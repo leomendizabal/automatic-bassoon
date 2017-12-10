@@ -18,6 +18,8 @@ class Autores
 
         void listarAutores (iteradorAutores &);
 
+        bool esVacio();
+
     protected:
 
     private:
