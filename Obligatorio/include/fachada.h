@@ -25,7 +25,7 @@ class Fachada{
         /** Requerimientos **/
         void registrarLibro(Libro *, Error&);
         void listarLibros();
-        void listarLibro(long int,Error&);
+        void listarLibro(long int,String&,Error&);
         void registrarAutor(Autor *,Error&);
         void listarAutores(iteradorAutores &);
         float calcularMontoTotal();

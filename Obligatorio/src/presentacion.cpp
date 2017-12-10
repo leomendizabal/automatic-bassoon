@@ -7,7 +7,8 @@ Presentacion::~Presentacion(){
 
  Presentacion::Presentacion()
 {
-
+        //TODO: borrar esto.
+        fachada.setAutores();
 }
 
 void Presentacion::menuPrincipal(int &opcion){
@@ -101,12 +102,12 @@ void Presentacion::registrarVenta(){
     long int isbn = 0;
     std::cout << "Ingrese ISBN: "; std::cin >> isbn;
     fachada.registrarVenta(isbn,error);
-
+    //validar error;
 }
 
 void Presentacion::montoRecaudado(){
     float total = fachada.calcularMontoTotal();
-    std::cout << "Total recaudado: "<<total;
+    std::cout << "Total recaudado: "<<total<<"\n";
 }
 
 void Presentacion::listarAutores(){
@@ -117,13 +118,21 @@ void Presentacion::listarAutores(){
             autor->toString().print();
         }
     } else {
-
+        error.setError(true);
+        error.setNumeroError(DICCIONARIO_VACIO);
     }
 }
 
 void Presentacion::detalleLibro(){
     long int isbn = 0;
+    String detalle;
     std::cout<< "Ingrese ISBN: "; std::cin >> isbn;
+    fachada.listarLibro(isbn,detalle,error);
+    if(error.hayError()){
+        //validar error
+    } else {
+        detalle.print();
+    }
 }
 
 void Presentacion::listarLibros(){
@@ -134,6 +143,9 @@ void Presentacion::consultarCantidadDeAutores(){
     Fecha fecha;
     std::cout << "Ingrese una fecha: ";
     fecha.scan();
+    int resultado = fachada.cantidadAutoresPosterior(fecha);
+    std::cout <<"\n" << "Los autores nacidos posterior a ";fecha.print();
+    std::cout <<" son: " << resultado << "\n";
 }
 
 
