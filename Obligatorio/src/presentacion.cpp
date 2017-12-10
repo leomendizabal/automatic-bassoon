@@ -116,7 +116,9 @@ void Presentacion::registrarLibro(tipoLibro tipo){
 }
 
 void Presentacion::listarLibroMasVendido(){
-
+     std::cout << "El libro mas vendido es: ";
+     Error e(false, SIN_ERROR);
+     fachada.listarLibroMasVendido(e);
 }
 
 void Presentacion::consultarCantidadVendida(){
