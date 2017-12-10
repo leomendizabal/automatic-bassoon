@@ -21,17 +21,17 @@ Autor* Seed::generarAutor()
 Libros Seed::generarLibros(int cant) {
     Libros ls;
     for(int i = 0; i < cant; i++){
-        ls.insert(generarLibro());
+        Libro * lib = generarLibro();
+        ls.insert(lib);
+     printf("%ld\n",lib->getIsbn());
     }
     return ls;
 }
 
-Autores Seed::generarAutores(int cant){
-    Autores as;
+void Seed::generarAutores(Autores &as,int cant){
     for(int i = 0; i < cant; i++){
         as.insert(generarAutor());
     }
-    return as;
 }
 
 

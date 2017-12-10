@@ -1,5 +1,5 @@
 #include "fachada.h"
-
+#include"seed.h"
 Fachada::Fachada() : autores(), libros(){
 
 }
@@ -94,6 +94,7 @@ void Fachada::listarAutores(){
     autores.listarAutores(i);
     while(i.hayMasAutores()){
         Autor * aux = i.proximoAutor();
+        std::cout << "Autor: "<< aux->getCedula() << "\n";
     }
 }
 
@@ -131,20 +132,23 @@ void Fachada::listarLibro(long int isbn){
 void Fachada::listarLibros(){
 
     IteradorLibros iterador = libros.listarLibros();
-
     while(iterador.hayMasLibros()){
         Libro * l = iterador.proximoLibro();
         l->toString().print();
     }
 }
 
-void Fachada::setLibros(Libros)
+void Fachada::setLibros()
 {
+    Seed s;
+    libros = s.generarLibros(5);
 
 }
 
-void Fachada::setAutores(Autores diccionario)
+void Fachada::setAutores()
 {
-    autores = diccionario;
+    //Seed s;
+    //s.generarAutores(autores,5);
+
 }
 
