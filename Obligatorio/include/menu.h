@@ -22,7 +22,7 @@ const int OPCION_MENU_SALIR = 11;
 class Menu {
 
     private:
-        Fachada fachada;
+        //Fachada fachada;
 
     public:
         Menu();

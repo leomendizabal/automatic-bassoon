@@ -54,3 +54,6 @@ Cadena Novela::toString(){
     return Libro::toString() + "NOVELA\n";
 }
 
+Cadena Novela::toStringComplete(){
+    return Libro::toStringComplete() + " genero: " + this->genero + "\n";
+}

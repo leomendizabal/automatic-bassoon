@@ -27,11 +27,13 @@ int main()
     Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
 
     fachada.registrarLibro(novela1);
-    fachada.registrarLibro(novela2);
-    fachada.registrarLibro(escolar);
-    fachada.registrarLibro(texto);
+    //fachada.registrarLibro(novela2);
+    //fachada.registrarLibro(escolar);
+    //fachada.registrarLibro(texto);
 
     fachada.listarLibros();
+    fachada.listarLibro(1234);
+
     /** fin prueba libros **/
 
     do

@@ -35,6 +35,7 @@ class Libro{
 
         virtual tipoLibro getTipo() = 0;
         virtual Cadena toString();
+        virtual Cadena toStringComplete();
     private:
 
         long int isbn;

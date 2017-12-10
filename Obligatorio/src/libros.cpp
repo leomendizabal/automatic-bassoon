@@ -18,7 +18,6 @@ bool Libros::member(int num){
 void Libros::insert(Libro * l){
     int num = l->getIsbn();
     int cubeta = h(num);
-
     insFrontEnLista(hash[cubeta], l);
 }
 
@@ -73,11 +72,13 @@ Libro * Libros::obtenerEnLista(Nodo * L, int isbn){
 
 IteradorLibros Libros::listarLibros(){
     IteradorLibros iterador;
+    Nodo * aux;
 
     for(int i=0; i<TAM; i++){
-        while(hash[i] != NULL){
-            iterador.insertar(hash[i]->info);
-            hash[i] = hash[i]->sig;
+        aux = hash[i];
+        while(aux != NULL){
+            iterador.insertar(aux->info);
+            aux = aux->sig;
         }
     }
 

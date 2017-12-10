@@ -26,8 +26,9 @@ class Texto : public Libro
 
         float getPrecio();
         tipoLibro getTipo();
-        Cadena toString();
 
+        Cadena toString();
+        Cadena toStringComplete();
     private:
 
         Cadena materia;

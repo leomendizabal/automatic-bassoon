@@ -54,7 +54,18 @@ Cadena Libro::toString(){
     Cadena libro;
     Cadena separador(" - ");
 
-    libro = CadenaUtils::convetirACadena(this->isbn)+separador+this->titulo+separador;
+    libro = /*CadenaUtils::convetirACadena(this->isbn)+*/separador+this->titulo+separador;
 
     return libro;
+}
+
+Cadena Libro::toStringComplete(){
+    Cadena detalle;
+    char * t = "titulo: ";
+    Cadena titulo(t);
+
+    detalle = titulo+this->titulo;
+    //Cadena("ISBN: ")+CadenaUtils::convetirACadena(this->isbn)+" Titulo: "+this->titulo+" Precio base: " + CadenaUtils::convetirACadena(this->precioBase)+" unidades vendidas: "+CadenaUtils::convetirACadena(this->unidadesVendidas);
+
+    return detalle;
 }

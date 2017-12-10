@@ -10,6 +10,7 @@ class CadenaUtils{
 
         CadenaUtils();
         virtual ~CadenaUtils();
+        static Cadena convetirACadena(int);
         static Cadena convetirACadena(float);
         static Cadena convetirACadena(long int);
 

@@ -48,3 +48,7 @@ tipoLibro Escolar::getTipo(){
 Cadena Escolar::toString(){
     return Libro::toString() + "ESCOLAR\n";
 }
+
+Cadena Escolar::toStringComplete(){
+    return Libro::toStringComplete(); //+ CadenaUtils::convetirACadena(this->anioEscuela);
+}

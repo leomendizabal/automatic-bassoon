@@ -1,7 +1,7 @@
 #include "menu.h"
 
 Menu::Menu(){
-    fachada = Fachada();
+
 }
 
 Menu::~Menu(){
