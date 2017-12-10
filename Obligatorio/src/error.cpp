@@ -16,6 +16,14 @@ Error::~Error()
     //dtor
 }
 
+void Error::setError(bool e){
+    hay_error = e;
+}
+
+void Error::setNumeroError(TipoDeError t){
+    tipo_error = t;
+}
+
 TipoDeError Error::getTipoError(){
     return tipo_error;
 }

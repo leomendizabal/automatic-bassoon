@@ -3,9 +3,9 @@
 
 enum TipoDeError{SIN_ERROR,NO_EXISTE_LIBRO,NO_EXISTE_AUTOR,DICCIONARIOVACIO};
 
-class Error
-{
+class Error{
     public:
+
         Error();
         Error(bool,TipoDeError);
         virtual ~Error();
@@ -13,9 +13,10 @@ class Error
         bool hayError();
         TipoDeError getTipoError();
 
-    protected:
-
+        void setError(bool);
+        void setNumeroError(TipoDeError);
     private:
+
         bool hay_error;
         TipoDeError tipo_error;
 };
