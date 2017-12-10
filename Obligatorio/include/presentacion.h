@@ -27,9 +27,10 @@ const int OPCION_SUB_MENU_4 = 4;
 class Presentacion {
 
     private:
-        Fachada fachada;
         void scan(Cadena &);
         void print(Cadena);
+        //Fachada fachada;
+
     public:
         Presentacion();
         virtual ~Presentacion();

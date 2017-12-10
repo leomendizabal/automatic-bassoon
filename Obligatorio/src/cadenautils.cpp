@@ -10,20 +10,24 @@ CadenaUtils::~CadenaUtils()
     //dtor
 }
 
+Cadena CadenaUtils::convetirACadena(int valor){
+    char * cadena = new char[LENGTH];
+    snprintf(cadena, sizeof(cadena), "%d", valor);
+    Cadena result(cadena);
+    return result;
+}
 
 Cadena CadenaUtils::convetirACadena(long int valor){
-    char cadena[LENGTH];
-    snprintf(cadena, sizeof(cadena), "%d", valor);
-    char * pchar = cadena;
-    Cadena result(pchar);
+    char * cadena = new char[LENGTH];
+    snprintf(cadena, sizeof(cadena), "%ld", valor);
+    Cadena result(cadena);
     return result;
 }
 
 Cadena CadenaUtils::convetirACadena(float valor){
-    char cadena[LENGTH];
+    char * cadena = new char[LENGTH];
     snprintf(cadena, sizeof(cadena), "%.2f", valor);
-    char * pchar = cadena;
-    Cadena result(pchar);
+    Cadena result(cadena);
     return result;
 }
 

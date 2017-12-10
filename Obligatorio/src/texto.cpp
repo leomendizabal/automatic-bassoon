@@ -59,3 +59,7 @@ tipoLibro Texto::getTipo(){
 Cadena Texto::toString(){
     return Libro::toString() + "TEXTO\n";
 }
+
+Cadena Texto::toStringComplete(){
+    return Libro::toStringComplete() + " materia: " + this->materia + " Fecha 1/1/1990"; //TODO: implementar toString de fecha
+}

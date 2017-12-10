@@ -23,8 +23,9 @@ class Escolar : public Texto
 
         float getPrecio();
         tipoLibro getTipo();
-        Cadena toString();
 
+        Cadena toString();
+        Cadena toStringComplete();
     private:
 
         int anioEscuela;

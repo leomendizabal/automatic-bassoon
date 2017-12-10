@@ -25,12 +25,14 @@ int main(){
     Libro * escolar = new Escolar(1111, "preba escolar", 1000, 1, "asdf", f, 1);
     Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
 
-   /* fachada.registrarLibro(novela1);
-    fachada.registrarLibro(novela2);
-    fachada.registrarLibro(escolar);
-    fachada.registrarLibro(texto);
+    fachada.registrarLibro(novela1);
+    //fachada.registrarLibro(novela2);
+    //fachada.registrarLibro(escolar);
+    //fachada.registrarLibro(texto);
 
-    fachada.listarLibros();*/
+    fachada.listarLibros();
+    fachada.listarLibro(1234);
+
     /** fin prueba libros **/
     /*Seed s;
     fachada.setAutores(s.generarAutores(20));

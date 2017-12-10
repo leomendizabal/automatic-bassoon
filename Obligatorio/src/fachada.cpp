@@ -1,8 +1,7 @@
 #include "fachada.h"
-#include<stdio.h>
-Fachada::Fachada(){
-    this->libros = Libros();
-    this->autores = Autores();
+
+Fachada::Fachada() : autores(), libros(){
+
 }
 
 Fachada::~Fachada(){
@@ -57,8 +56,15 @@ void Fachada::registrarAutor(Autor autor){
 
 }
 
-void Fachada::listarLibro(long int cedula){
+void Fachada::listarLibro(int isbn){
+    bool existe = libros.member(isbn);
 
+    if(existe){
+        Libro * l = libros.find(isbn);
+        std::cout << l->toStringComplete().getCadena();
+    }else {
+        printf("el libro NO existe");
+    }
 }
 
 void Fachada::listarLibros(){

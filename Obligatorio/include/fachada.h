@@ -24,7 +24,7 @@ class Fachada{
         /** Requerimientos **/
         void registrarLibro(Libro *);
         void listarLibros();
-        void listarLibro(long int);
+        void listarLibro(int);
         void registrarAutor(Autor);
         void listarAutores();
         float calcularMontoTotal();
