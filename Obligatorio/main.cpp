@@ -26,11 +26,12 @@ int main(){
     Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
 
     Autor * autor = new Autor(9999, String("autor1"), f);
-    fachada.registrarAutor(autor);
+
 
     ((Novela *)novela2)->setAutor(autor);
 
     Error e;
+    fachada.registrarAutor(autor,e);
     fachada.registrarLibro(novela1, e);
     fachada.registrarLibro(novela2, e);
     fachada.registrarLibro(escolar, e);

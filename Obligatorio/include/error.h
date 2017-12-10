@@ -6,7 +6,8 @@ enum TipoDeError{
     LIBRO_YA_EXISTE,
     NO_EXISTE_LIBRO,
     NO_EXISTE_AUTOR,
-    DICCIONARIOVACIO
+    DICCIONARIOVACIO,
+    AUTOR_YA_EXISTE,
 };
 
 class Error{
