@@ -36,18 +36,20 @@ void Seed::generarAutores(Autores &as,int cant){
 
 Libro * Seed::generarLibro(){
     int categoria = randomNumber(1,3);
-    int isbn = randomNumber(1000,9000);
+    int isbn = randomNumber(1,10);
     int precio = randomNumber(1,100);
     switch (categoria) {
         case 1:
              return new Texto(isbn, "prueba texto", precio, 0, "genero", randomFecha());
         case 2:
+             Novela * novela;
              if (randomNumber(0,1) == 0 ){
-                return new Novela(isbn, "prueba novela", precio, 0,"infantil");
+                novela = new Novela(isbn, "prueba novela", precio, 0,"infantil");
              } else {
-                return new Novela(isbn, "prueba novela", precio, 0,"otros");
+                 novela = new Novela(isbn, "prueba novela", precio, 0,"otros");
              }
-
+             novela->setAutor(generarAutor());
+             return novela;
         case 3:
              return new Escolar(isbn, "preba escolar", precio, 0, "asdf", randomFecha(), randomNumber(1,6));
         default:break;

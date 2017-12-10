@@ -98,17 +98,13 @@ Libro * Libros::obtenerEnLista(Nodo * L, int isbn){
     return (L->info);
 }
 
-IteradorLibros Libros::listarLibros(){
-    IteradorLibros iterador;
+void Libros::listarLibros(IteradorLibros &iter){
     Nodo * aux;
-
     for(int i=0; i<TAM; i++){
         aux = hash[i];
         while(aux != NULL){
-            iterador.insertar(aux->info);
+            iter.insertar(aux->info);
             aux = aux->sig;
         }
     }
-
-    return iterador;
 }

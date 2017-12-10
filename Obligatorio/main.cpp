@@ -16,10 +16,10 @@ int main(){
     bool salir = false;
     int opcion = -1;
     Presentacion menu;
-    Fachada fachada;
+   /* Fachada fachada;
 
     /** Prueba de libros **/
-    Fecha f(20, 12, 2016);
+    /*Fecha f(20, 12, 2016);
     Libro * novela1 = new Novela(1234, "prueba 1", 100, 0, "infantil");
     Libro * novela2 = new Novela(12345, "prueba 2", 100, 0, "infantil");
     Libro * escolar = new Escolar(1111, "preba escolar", 1000, 1, "asdf", f, 1);
@@ -29,7 +29,7 @@ int main(){
 
 
     ((Novela *)novela2)->setAutor(autor);
-
+    */
     /*Error e;
     fachada.registrarAutor(autor,e);
     fachada.registrarLibro(novela1, e);

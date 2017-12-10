@@ -32,7 +32,8 @@ void Fachada::registrarLibro(Libro * l, Error &e){
 }
 
 void Fachada::cantidadTotalVendida(int novelas, int texto, int escolar){
-    IteradorLibros iter = libros.listarLibros();
+    IteradorLibros iter;
+    libros.listarLibros(iter);
     while(iter.hayMasLibros()){
         Libro * lib = iter.proximoLibro();
         switch(lib->getTipo()){
@@ -85,7 +86,8 @@ void Fachada::registrarVenta(long int isbn, Error &e){
 
 float Fachada::calcularMontoTotal(){
     float resultado = 0;
-    IteradorLibros iter = libros.listarLibros();
+    IteradorLibros iter;
+    libros.listarLibros(iter);
     while (iter.hayMasLibros()) {
         Libro * libro = iter.proximoLibro();
         resultado += libro->getPrecio();
@@ -130,7 +132,7 @@ void Fachada::listarLibro(long int isbn,String &result, Error &e){
 }
 
 void Fachada::listarLibros(IteradorLibros &iter){
-    iter = libros.listarLibros();
+    libros.listarLibros(iter);
 }
 
 void Fachada::setLibros()

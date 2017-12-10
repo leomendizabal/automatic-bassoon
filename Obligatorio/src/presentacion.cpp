@@ -9,6 +9,7 @@ Presentacion::~Presentacion(){
 {
         //TODO: borrar esto.
         fachada.setAutores();
+        fachada.setLibros();
 }
 
 void Presentacion::menuPrincipal(int &opcion){
@@ -161,7 +162,7 @@ void Presentacion::detalleLibro(){
     std::cout<< "Ingrese ISBN: "; std::cin >> isbn;
     fachada.listarLibro(isbn,detalle,error);
     if(error.hayError()){
-        //validar error
+         std::cout<< "hay error";
     } else {
         detalle.print();
     }

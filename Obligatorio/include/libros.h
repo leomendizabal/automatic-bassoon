@@ -26,7 +26,7 @@ class Libros{
 
         Libro * obtenerLibroMasVendido();
 
-        IteradorLibros listarLibros();
+        void listarLibros(IteradorLibros &);
 
     private:
 
