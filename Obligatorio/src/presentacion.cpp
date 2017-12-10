@@ -146,6 +146,8 @@ void Presentacion::imprimirError(TipoDeError codigo){
         case NO_EXISTE_AUTOR:break;
         case NO_EXISTE_LIBRO:break;
         case DICCIONARIO_VACIO:break;
+        case LIBRO_YA_EXISTE:break;
+        case AUTOR_YA_EXISTE:break;
     }
 }
 
