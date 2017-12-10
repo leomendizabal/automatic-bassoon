@@ -22,6 +22,10 @@ class Libros{
         //precondición: el libro es miembro de la colección
         Libro * find(int);
 
+        bool esVacio();
+
+        void listarLibroMasVendido();
+
         IteradorLibros listarLibros();
 
     private:

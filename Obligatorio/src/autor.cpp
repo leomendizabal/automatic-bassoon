@@ -46,3 +46,11 @@ Fecha Autor::getFecNacimiento(){
 void Autor::setFecNacimiento(Fecha fechaNac){
     this->fecNacimiento = fechaNac;
 }
+
+void Autor::listarInfoAutor(){
+
+}
+
+
+
+

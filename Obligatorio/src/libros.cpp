@@ -27,6 +27,34 @@ Libro * Libros::find (int num){
     return obtenerEnLista(hash[cubeta], num);
 }
 
+bool Libros::esVacio(){
+    bool vacio=true;
+    int i=0;
+    while ((i<TAM) && vacio){
+        if (hash[i]==NULL)
+            i++;
+        else
+            vacio=false;
+    }
+    return vacio;
+}
+
+void Libros::listarLibroMasVendido(){
+            Libro * max;
+            int i=0;
+            while (hash[i]==NULL){ // busco el primer Libro
+            i++;
+            }
+            max = hash[i]->info;
+            for (int j=i+1; j < TAM; j++){ // comparo con los restantes
+               if (hash[j]!=NULL)
+                   if (hash[j]->info->getUnidadesVendidas() > max->getUnidadesVendidas())
+                        max = hash[j]->info;
+            }
+
+
+}
+
 int Libros::h(int num){
     return (num % TAM);
 }

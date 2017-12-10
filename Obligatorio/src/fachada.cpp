@@ -1,8 +1,7 @@
 #include "fachada.h"
 
-Fachada::Fachada(){
-    this->libros = Libros();
-    this->autores = Autores();
+Fachada::Fachada():autores(),libros(){
+
 }
 
 Fachada::~Fachada(){
@@ -32,6 +31,13 @@ int Fachada::cantidadTotalVendida(){
 }
 
 void Fachada::listarLibroMasVendido(){
+       if (libros.esVacio())
+            printf("Error , No hay ningun libro registrado");
+       else{
+
+
+
+       }
 
 
 }

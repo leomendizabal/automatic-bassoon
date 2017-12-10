@@ -31,6 +31,7 @@ class Libro{
         int getUnidadesVendidas();
         void setUnidadesVendidas(int);
 
+
         virtual tipoLibro getTipo() = 0;
 
     private:
