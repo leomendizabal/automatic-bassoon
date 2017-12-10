@@ -1,14 +1,12 @@
 #include "Presentacion.h"
 
 
- Presentacion::~Presentacion()
-{
+Presentacion::~Presentacion(){
 
 }
 
- Presentacion::Presentacion()
-{
-    fachada = Fachada();
+Presentacion::Presentacion():fachada(){
+
 }
 
 
@@ -27,6 +25,16 @@ void Presentacion::menuPrincipal(int &opcion){
     printf("11. Salir del Presentacion.\n");
     scanf("%d",&opcion);
 }
+
+void Presentacion::subMenu(int &op) {
+    printf("1.  Novela\n");
+    printf("2.  Texto\n");
+    printf("3.  Texto escolar\n");
+    printf("4.  Salir\n");
+    scanf("%d",&op);
+}
+
+
 
 
 void Presentacion::registrarAutor() {
@@ -47,6 +55,36 @@ void Presentacion::registrarAutor() {
     fachada.registrarAutor(autor);
     std::cout <<"Autor ingresado correctamente"<<"\n";
 }
+
+void Presentacion::registrarLibro(tipoLibro tipo){
+    Texto * texto;
+    Escolar * escolar;
+    Novela * novela;
+    long int isbn;
+    std::cout << "ISBN :";
+    std::cin >> isbn;
+    //Nombre
+    std::cout << "TITULO :";
+    Cadena titulo;
+    scan(titulo);
+    float precio;
+    std::cout << "ISBN :";
+    std::cin >> precio;
+    switch(tipo){
+        case NOVELA:{
+            std::cout << "Genero :";
+            Cadena genero;
+            scan(genero);
+            novela = new Novela(isbn,titulo,precio,0,genero);
+        }
+        break;
+        case TEXTO:
+        break;
+        case ESCOLAR:
+        break;
+    }
+}
+
 
 
 void Presentacion::scan(Cadena &s) {
