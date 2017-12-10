@@ -68,14 +68,14 @@ void Fachada::listarLibroMasVendido(){
 
 }
 
-void Fachada::registrarVenta(long int isbn){
+void Fachada::registrarVenta(long int isbn, Error &error){
      bool consulta = libros.member(isbn);
      if(consulta){
          Libro * vendido = libros.find(isbn);
          int cantidad = vendido->getUnidadesVendidas() + 1;
          vendido ->setUnidadesVendidas(cantidad);
      } else {
-        //mensaje de error
+
      }
 }
 

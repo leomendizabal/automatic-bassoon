@@ -29,7 +29,7 @@ class Fachada{
         void registrarAutor(Autor *,Error&);
         void listarAutores();
         float calcularMontoTotal();
-        void registrarVenta(long int);
+        void registrarVenta(long int, Error&);
         void cantidadTotalVendida(int, int, int);
         void listarLibroMasVendido();
         int cantidadAutoresPosterior(Fecha);

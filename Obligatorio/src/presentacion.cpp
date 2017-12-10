@@ -7,7 +7,7 @@ Presentacion::~Presentacion(){
 
  Presentacion::Presentacion()
 {
-    //fachada = Fachada();
+
 }
 
 void Presentacion::menuPrincipal(int &opcion){
@@ -100,6 +100,7 @@ void Presentacion::consultarCantidadVendida(){
 void Presentacion::registrarVenta(){
     long int isbn = 0;
     std::cout << "Ingrese ISBN: "; std::cin >> isbn;
+    fachada.registrarVenta(isbn,error);
 }
 
 void Presentacion::montoRecaudado(){

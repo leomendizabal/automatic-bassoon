@@ -28,6 +28,8 @@ class Presentacion {
 
     private:
         void imprimirError(TipoDeError codigo);
+        Fachada fachada;
+        Error error;
 
     public:
         Presentacion();
