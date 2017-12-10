@@ -8,6 +8,7 @@ Error::Error(bool hayError, TipoDeError tipoError) {
 
 Error::Error()
 {
+    hay_error = false;
     //ctor
 }
 
