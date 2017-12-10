@@ -24,7 +24,7 @@ class Libros{
 
         bool esVacio();
 
-        void listarLibroMasVendido();
+        Libro * obtenerLibroMasVendido();
 
         IteradorLibros listarLibros();
 

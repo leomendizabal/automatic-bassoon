@@ -35,8 +35,6 @@ void Fachada::listarLibroMasVendido(){
             printf("Error , No hay ningun libro registrado");
        else{
 
-
-
        }
 
 

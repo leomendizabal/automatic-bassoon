@@ -162,5 +162,13 @@ bool Fecha::esValida(){
     return esDdValido && esMmValido && esAaValido;
 }
 
+String Fecha::toString(){
+    String strfech;
+    String separador("/");
+
+    strfech = CadenaUtils::convetirACadena(this->dd)+separador+CadenaUtils::convetirACadena(this->mm)+separador+CadenaUtils::convetirACadena(this->aa);
+
+    return strfech;
+}
 
 

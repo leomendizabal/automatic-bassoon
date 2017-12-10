@@ -1,6 +1,6 @@
 #ifndef FECHA_H
 #define FECHA_H
-
+#include "cadenautils.h"
 
 class Fecha
 {
@@ -20,11 +20,13 @@ class Fecha
         Fecha operator+(int);
         int operator-(Fecha);
         bool esValida();
+        String toString();
 
         /** Getters and Setters **/
         int getDd();
         int getMm();
         int getAa();
+
 
     private:
 

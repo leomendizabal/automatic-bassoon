@@ -38,7 +38,7 @@ bool Libros::esVacio(){
     return vacio;
 }
 
-void Libros::listarLibroMasVendido(){
+Libro * Libros::obtenerLibroMasVendido(){
             Libro * max;
             int i=0;
             while (hash[i]==NULL){ // busco el primer Libro
@@ -50,7 +50,7 @@ void Libros::listarLibroMasVendido(){
                    if (hash[j]->info->getUnidadesVendidas() > max->getUnidadesVendidas())
                         max = hash[j]->info;
             }
-
+            return max;
 
 }
 
