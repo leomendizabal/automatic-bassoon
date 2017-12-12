@@ -61,8 +61,12 @@ String Libro::toString(){
 
 String Libro::toStringComplete(){
     String detalle;
-
-    detalle = String("ISBN: ")+CadenaUtils::convetirACadena(this->isbn)+String(" Titulo: ")+this->titulo+String(" Precio base: ") + CadenaUtils::convetirACadena(this->precioBase)+String(" unidades vendidas: ")+CadenaUtils::convetirACadena(this->unidadesVendidas);
+    String etiquetaIsbn("ISBN: ");
+    String etiquetaTitulo(" Titulo: ");
+    String etiquetaUnidades(" unidades vendidas: ");
+    String salto("\n");
+    detalle = etiquetaIsbn+CadenaUtils::convetirACadena(this->isbn)+etiquetaTitulo+this->titulo+etiquetaTitulo+ CadenaUtils::convetirACadena(this->precioBase)+etiquetaUnidades+
+    CadenaUtils::convetirACadena(this->unidadesVendidas) + salto;
 
     return detalle;
 }

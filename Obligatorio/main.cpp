@@ -8,6 +8,7 @@
 #include "texto.h"
 #include "escolar.h"
 #include"seed.h"
+
 using namespace std;
 
 int main(){
@@ -17,39 +18,7 @@ int main(){
     bool atras = false;
     int opcion = -1;
     Presentacion menu;
-   /* Fachada fachada;
 
-    /** Prueba de libros **/
-    /*Fecha f(20, 12, 2016);
-    Libro * novela1 = new Novela(1234, "prueba 1", 100, 0, "infantil");
-    Libro * novela2 = new Novela(12345, "prueba 2", 100, 0, "infantil");
-    Libro * escolar = new Escolar(1111, "preba escolar", 1000, 1, "asdf", f, 1);
-    Libro * texto = new Texto(1232, "prueba texto", 1000, 12, "asdf", f);
-
-    Autor * autor = new Autor(9999, String("autor1"), f);
-
-
-    ((Novela *)novela2)->setAutor(autor);
-    */
-    /*Error e;
-    fachada.registrarAutor(autor,e);
-    fachada.registrarLibro(novela1, e);
-    fachada.registrarLibro(novela2, e);
-    fachada.registrarLibro(escolar, e);
-    fachada.registrarLibro(texto, e);
-
-    fachada.listarLibros();
-    printf("Listar un libro: \n");
-    fachada.listarLibro(12345);
-    fachada.listarLibro(1234);
-    fachada.listarLibro(1111);
-    fachada.listarLibro(1232);*/
-
-
-    /** fin prueba libros **/
-    /*Seed s;
-    fachada.setAutores(s.generarAutores(20));
-    fachada.listarAutores();*/
     do
     {
         menu.menuPrincipal(opcion);
@@ -114,7 +83,7 @@ int main(){
             salir = true;
             break;
         default:
-            printf("Opcion no implementada\n");
+            std:cout << "Opcion no implementada" << "\n";
             break;
         }
 

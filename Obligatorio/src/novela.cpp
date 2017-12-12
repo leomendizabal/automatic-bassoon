@@ -55,9 +55,12 @@ Autor * Novela::getAutor(){
 }
 
 String Novela::toString(){
-    return Libro::toString() + "NOVELA\n";
+    String s("NOVELA\n");
+    return Libro::toString() + s;
 }
 
 String Novela::toStringComplete(){
-    return Libro::toStringComplete() + " genero: " + this->genero + "\n";
+    String etiqueta(" genero: ");
+    String salto("\n");
+    return Libro::toStringComplete() + etiqueta + this->genero + salto;
 }

@@ -57,9 +57,13 @@ tipoLibro Texto::getTipo(){
 }
 
 String Texto::toString(){
-    return Libro::toString() + String("TEXTO\n");
+    String s("TEXTO\n");
+    return Libro::toString() + s ;
 }
 
 String Texto::toStringComplete(){
-    return Libro::toStringComplete() + String(" materia: ") + this->materia + String(" Fecha publicado: ") + this->fechaPublicado.toString()+"\n";
+    String etiqMateria(" materia: ");
+    String etiqFecha(" Fecha publicado: ");
+    String salto("\n");
+    return Libro::toStringComplete() + etiqMateria + this->materia + etiqFecha + this->fechaPublicado.toString()+salto;
 }

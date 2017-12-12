@@ -36,7 +36,6 @@
 		</Compiler>
 		<Unit filename="include/autor.h" />
 		<Unit filename="include/autores.h" />
-		<Unit filename="include/cadena.h" />
 		<Unit filename="include/cadenautils.h" />
 		<Unit filename="include/error.h" />
 		<Unit filename="include/escolar.h" />
@@ -54,7 +53,6 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/autor.cpp" />
 		<Unit filename="src/autores.cpp" />
-		<Unit filename="src/cadena.cpp" />
 		<Unit filename="src/cadenautils.cpp" />
 		<Unit filename="src/error.cpp" />
 		<Unit filename="src/escolar.cpp" />

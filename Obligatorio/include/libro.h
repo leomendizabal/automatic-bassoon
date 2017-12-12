@@ -1,6 +1,5 @@
 #ifndef LIBRO_H
 #define LIBRO_H
-#include <cadena.h>
 #include <string.h>
 #include "cadenautils.h"
 #include "str.h"

@@ -1,5 +1,6 @@
 #include "fachada.h"
 #include"seed.h"
+
 Fachada::Fachada() : autores(), libros(){
 
 }
@@ -123,7 +124,8 @@ void Fachada::listarLibro(long int isbn,String &result, Error &e){
             Autor * autor = ((Novela*)l)->getAutor();
 
             if(autor){
-                result = result + autor->toString();
+                String etiqAutor("Autor: ");
+                result = result + etiqAutor + autor->toString();
             }
         }
     }else {

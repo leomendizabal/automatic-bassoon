@@ -7,9 +7,9 @@ Presentacion::~Presentacion(){
 
  Presentacion::Presentacion()
 {
-        //TODO: borrar esto.
-        fachada.setAutores();
-        fachada.setLibros();
+        //TODO: Descomentar para pruebas
+        //fachada.setAutores();
+        //fachada.setLibros();
 }
 
 void Presentacion::menuPrincipal(int &opcion){
@@ -106,7 +106,7 @@ void Presentacion::registrarLibro(tipoLibro tipo){
             Fecha fecha;
             fecha.scan();
 
-            std::cout << "Materia: \n";
+            std::cout << "Materia: ";
             String materia;
             materia.scan();
 
@@ -162,7 +162,7 @@ void Presentacion::registrarVenta(){
 
 void Presentacion::montoRecaudado(){
     float total = fachada.calcularMontoTotal();
-    std::cout << "Total recaudado: "<<total<<"\n";
+    std::cout << "Total recaudado: $"<<total<<"\n";
 }
 
 void Presentacion::listarAutores(){
@@ -221,7 +221,6 @@ void Presentacion::consultarCantidadDeAutores(){
 
 /**  Private  **/
 
-//SIN_ERROR,NO_EXISTE_LIBRO,NO_EXISTE_AUTOR,DICCIONARIOVACIO
 void Presentacion::imprimirError(TipoDeError codigo){
     switch(codigo){
         case SIN_ERROR:

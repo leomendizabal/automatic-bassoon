@@ -46,9 +46,12 @@ tipoLibro Escolar::getTipo(){
 }
 
 String Escolar::toString(){
-    return Libro::toString() + "ESCOLAR\n";
+    String s("ESCOLAR\n");
+    return Libro::toString() + s;
 }
 
 String Escolar::toStringComplete(){
-    return Libro::toStringComplete() + String(" Año: ") + CadenaUtils::convetirACadena(this->anioEscuela) + "\n";
+    String a(" Año: ");
+    String salto("\n");
+    return Libro::toStringComplete() + a + CadenaUtils::convetirACadena(this->anioEscuela) + salto;
 }
